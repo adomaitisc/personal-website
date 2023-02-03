@@ -38,7 +38,7 @@ const Home: NextPage = () => {
             </p>
           </div>
           <div className="flex w-[366px] items-center gap-2 rounded-2xl border border-white/10 bg-black p-2 text-white">
-            <Image src={warhaus} alt="album of the week" />
+            <Image src={warhaus as string} alt="album of the week" />
             <p className="text-sm font-medium">{`Warhaus - Love's a Stranger`}</p>
           </div>
           <div className="flex w-[366px] flex-col rounded-2xl border border-white/10 bg-black p-6 text-white">
@@ -83,7 +83,7 @@ const Home: NextPage = () => {
                 className="w-full rounded-lg bg-zinc-900 p-2 text-sm text-white focus:outline-none focus:ring-2 focus:ring-white/40"
               />
               <button className="absolute right-6 my-auto h-full">
-                <Image src={send} alt="send message" />
+                <Image src={send as string} alt="send message" />
               </button>
             </div>
           </div>
