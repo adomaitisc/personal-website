@@ -22,22 +22,18 @@ const Home: NextPage = () => {
   });
 
   const playPause = () => {
-    const audio = document.querySelector("audio");
-    if (!audio) return;
-    if (playing) {
-      try {
+    try {
+      const audio = document.querySelector("audio");
+      if (!audio) return;
+      if (playing) {
         audio.pause();
         setPlaying(false);
-      } catch (e) {
-        console.log(e);
-      }
-    } else {
-      try {
+      } else {
         audio.play();
         setPlaying(true);
-      } catch (e) {
-        console.log(e);
       }
+    } catch (e) {
+      console.log(e);
     }
   };
 
