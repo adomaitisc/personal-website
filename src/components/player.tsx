@@ -49,9 +49,19 @@ export function Player() {
 
   useEffect(() => {
     if (playing) {
+      audioRef.current.autoplay = true;
       document.title = `${currentSong!.name} - ${currentSong!.artist}`;
     }
   }, [playing, currentSong]);
+
+  useEffect(() => {
+    audioRef.current.addEventListener("ended", () => {
+      nextSong();
+      setTimeout(() => {
+        audioRef.current.play();
+      }, 1000);
+    });
+  }, [currentSong, audioRef]);
 
   return (
     <div className="flex w-[366px] items-center justify-between gap-2 rounded-2xl border border-white/10 bg-black p-2 text-white">
