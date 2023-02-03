@@ -7,7 +7,7 @@ import skip from "../../public/images/skip.svg";
 
 import { Playlist } from "../util/playlist";
 
-export function Player() {
+export function Player({ onLoad }: { onLoad: (e: string) => void }) {
   const [playing, setPlaying] = useState<boolean>(false);
   const audioRef = useRef<HTMLAudioElement | null | any>();
   const [currentSong, setCurrentSong] = useState(Playlist[0]);
@@ -68,6 +68,7 @@ export function Player() {
       <div className="flex items-center justify-start gap-2 px-1 py-1">
         <Image
           priority
+          onLoad={() => onLoad("player")}
           src={currentSong!.cover}
           alt="album of the week"
           width={36}

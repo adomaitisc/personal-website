@@ -2,10 +2,11 @@ import Image from "next/image";
 
 import noronha from "../../public/images/IMG_4382.png";
 
-export function Pictures() {
+export function Pictures({ onLoad }: { onLoad: (e: string) => void }) {
   return (
     <div className="group relative flex w-[366px] flex-col overflow-hidden rounded-2xl border border-white/10 bg-black text-white">
       <Image
+        onLoad={() => onLoad("pictures")}
         priority
         src={noronha}
         alt="contributions"
