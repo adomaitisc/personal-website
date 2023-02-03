@@ -29,7 +29,9 @@ const Home: NextPage = () => {
         audio.pause();
         setPlaying(false);
       } else {
-        audio.play();
+        audio.play().then(() => {
+          console.log("playing");
+        });
         setPlaying(true);
       }
     } catch (e) {
