@@ -21,7 +21,7 @@ const Home: NextPage = () => {
     email: "",
   });
 
-  const playPause = () => {
+  const playPause = async () => {
     try {
       const audio = document.querySelector("audio");
       if (!audio) return;
@@ -29,9 +29,7 @@ const Home: NextPage = () => {
         audio.pause();
         setPlaying(false);
       } else {
-        audio.play().then(() => {
-          console.log("playing");
-        });
+        await audio.play();
         setPlaying(true);
       }
     } catch (e) {
