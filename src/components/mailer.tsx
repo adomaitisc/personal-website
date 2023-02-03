@@ -31,14 +31,12 @@ export function Mailer() {
       body: JSON.stringify(information),
     });
 
-    const data = await res.json();
-
-    setSuccess(true);
-    setTimeout(() => {
-      setSuccess(false);
-    }, 10000);
-
-    setInformation({ message: "", email: "" });
+    if (res.status === 200) {
+      setSuccess(true);
+      setTimeout(() => {
+        setSuccess(false);
+      }, 10000);
+    }
   };
 
   return (

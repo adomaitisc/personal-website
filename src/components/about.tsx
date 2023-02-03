@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import profilePic from "../../public/images/IMG_1294.png";
 
@@ -17,8 +18,14 @@ export function About() {
       </p>
       <p className="text-sm text-white/60">
         Currently developing{" "}
-        <span className="text-white">qualidadeinteligente</span>, and studying
-        Computer Science.
+        <Link
+          href="https://qualidadeinteligente.com.br"
+          target="_blank"
+          className="text-white"
+        >
+          qualidadeinteligente
+        </Link>
+        , and studying Computer Science.
       </p>
     </div>
   );

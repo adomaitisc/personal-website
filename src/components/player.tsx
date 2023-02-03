@@ -80,7 +80,7 @@ export function Player() {
       <div className="flex items-center justify-start">
         <button
           onClick={() => void playPause()}
-          className="flex h-full items-center justify-center px-2 py-1 duration-300 hover:scale-125"
+          className="flex h-full items-center justify-center px-2 py-1 duration-300 rounded-md hover:scale-125 hover:bg-zinc-900"
         >
           {playing ? (
             <Image priority src={pause as string} alt="pause" />
@@ -90,7 +90,7 @@ export function Player() {
         </button>
         <button
           onClick={() => void nextSong()}
-          className="flex h-full items-center justify-center px-2 py-1 duration-300 hover:scale-125"
+          className="flex h-full items-center justify-center px-2 py-1 duration-300 rounded-md hover:scale-125 hover:bg-zinc-900"
         >
           <Image priority src={skip as string} alt="skip" />
         </button>
