@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
+import { AnimatePresence, motion } from "framer-motion";
+
 import play from "../../public/images/play.svg";
 import pause from "../../public/images/pause.svg";
 import skip from "../../public/images/skip.svg";
@@ -14,7 +16,7 @@ export function Player() {
 
   const playPause = async () => {
     try {
-      const audio = audioRef.current;
+      const audio: HTMLAudioElement | null = audioRef.current;
       console.log(audio);
       if (!audio) return;
       if (playing) {
@@ -52,6 +54,12 @@ export function Player() {
     console.log(currentSong);
   }, [currentSong]);
 
+  useEffect(() => {
+    if (playing) {
+      document.title = `${currentSong!.name} - ${currentSong!.artist}`;
+    }
+  }, [playing, currentSong]);
+
   return (
     <div className="flex w-[366px] items-center justify-between gap-2 rounded-2xl border border-white/10 bg-black p-2 text-white">
       <div className="flex items-center justify-start gap-2 px-1 py-1">
@@ -72,9 +80,21 @@ export function Player() {
           className="flex h-full items-center justify-center px-2 py-1 duration-300 hover:scale-125"
         >
           {playing ? (
-            <Image priority src={pause as string} alt="pause" />
+            <motion.div
+              initial={{ opacity: 0, scale: 0.7 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.4, type: "tween" }}
+            >
+              <Image priority src={pause as string} alt="pause" />
+            </motion.div>
           ) : (
-            <Image priority src={play as string} alt="play" />
+            <motion.div
+              initial={{ opacity: 0, scale: 0.7 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.4, type: "tween" }}
+            >
+              <Image priority src={play as string} alt="play" />
+            </motion.div>
           )}
         </button>
         <button
