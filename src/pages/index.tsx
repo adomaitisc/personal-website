@@ -1,56 +1,14 @@
 import { type NextPage } from "next";
 import Head from "next/head";
-import Link from "next/link";
-import Image from "next/image";
 
-import profilePic from "../../public/images/IMG_1294.png";
-import githubContributions from "../../public/images/contributions.svg";
-import warhaus from "../../public/images/warhaus.svg";
-import noronha from "../../public/images/IMG_4382.png";
-import send from "../../public/images/send.svg";
-import play from "../../public/images/play.svg";
-import pause from "../../public/images/pause.svg";
-
-import Spline from "@splinetool/react-spline";
-import React, { useState } from "react";
+import { ThreeD } from "../../components/threed";
+import { Player } from "../../components/player";
+import { About } from "../../components/about";
+import { Contributions } from "../../components/contributions";
+import { Pictures } from "../../components/pictures";
+import { Mailer } from "../../components/mailer";
 
 const Home: NextPage = () => {
-  const [playing, setPlaying] = useState(false);
-  const [information, setInformation] = useState({
-    message: "",
-    email: "",
-  });
-
-  const playPause = async () => {
-    try {
-      const audio = document.querySelector("audio");
-      if (!audio) return;
-      if (playing) {
-        audio.pause();
-        setPlaying(false);
-      } else {
-        await audio.play();
-        setPlaying(true);
-      }
-    } catch (e) {
-      console.log(e);
-    }
-  };
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    setInformation({ ...information, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setInformation({ message: "", email: "" });
-    // send email
-
-    console.log(information);
-  };
-
   return (
     <>
       <Head>
@@ -60,105 +18,18 @@ const Home: NextPage = () => {
       </Head>
       <main className="flex min-h-screen flex-col items-center justify-center gap-[22px] bg-[rgb(3,3,1)] md:flex-row md:items-start">
         <div className="mt-32 flex  h-full flex-col gap-[22px] md:mb-32">
-          <div className="flex w-[366px] flex-col gap-4 rounded-2xl border border-white/10 bg-black p-6 text-white">
-            <Image
-              priority
-              src={profilePic}
-              alt="me"
-              className="h-[93px] w-[93px] rounded-full object-cover shadow-lg shadow-white/10"
-            />
-            <h1 className="text-2xl font-medium">Cauã Adomaitis</h1>
-            <p className="text-sm text-white/60">
-              Fullstack developer from São Paulo, based in Boston.
-            </p>
-            <p className="text-sm text-white/60">
-              I am currently developing{" "}
-              <span className="text-white">qualidadeinteligente</span>, and
-              studying Computer Science.
-            </p>
-          </div>
-          <div className="flex w-[366px] items-center gap-2 rounded-2xl border border-white/10 bg-black p-2 text-white">
-            <div className="relative">
-              <Image priority src={warhaus as string} alt="album of the week" />
-              <button
-                onClick={() => void playPause()}
-                className="absolute top-0 left-0 bottom-0 right-0 flex h-full w-full items-center justify-center duration-300 hover:scale-110"
-              >
-                {playing ? (
-                  <Image priority src={pause as string} alt="pause" />
-                ) : (
-                  <Image priority src={play as string} alt="play" />
-                )}
-              </button>
-              <audio src="/audio/warhaus.mp3"></audio>
-            </div>
-            <p className="text-sm font-medium">{`Warhaus - Love's a Stranger`}</p>
-          </div>
-          <div className="flex w-[366px] flex-col rounded-2xl border border-white/10 bg-black p-6 text-white">
-            <Spline
-              height={256}
-              scene="https://prod.spline.design/X3Ccee1d1BhNTpnu/scene.splinecode"
-            />
-            <p className="text-sm font-medium">qualidadeinteligente</p>
-          </div>
+          <About />
+          <Player />
+          <ThreeD
+            splineUrl={
+              "https://prod.spline.design/X3Ccee1d1BhNTpnu/scene.splinecode"
+            }
+          />
         </div>
         <div className="mb-32 flex h-full flex-col gap-[22px] md:mt-32">
-          <Link
-            href="https://github.com/adomaitisc"
-            target="_blank"
-            className="group flex w-[366px] cursor-pointer flex-col rounded-2xl border border-white/10 bg-black p-6 text-white"
-          >
-            <Image
-              priority
-              src={githubContributions as string}
-              alt="contributions"
-              className="duration-300 group-hover:scale-110"
-            />
-            <p className="text-sm font-medium">github/adomaitisc</p>
-          </Link>
-          <div className="group relative flex w-[366px] flex-col overflow-hidden rounded-2xl border border-white/10 bg-black text-white">
-            <Image
-              priority
-              src={noronha}
-              alt="contributions"
-              className="object-fit rounded-2xl duration-300 group-hover:scale-110"
-            />
-            <p className="absolute left-6 bottom-6 text-sm font-medium">
-              Fernando de Noronha
-            </p>
-          </div>
-          <form
-            onSubmit={(e) => handleSubmit(e)}
-            className="flex w-[366px] flex-col gap-[12px] rounded-2xl border border-white/10 bg-black p-3 text-white"
-          >
-            <textarea
-              name="message"
-              onChange={(e) => handleChange(e)}
-              value={information.message}
-              className="h-[96px] w-full resize-none rounded-lg bg-zinc-900 p-2 text-sm text-white focus:outline-none focus:ring-2 focus:ring-white/40"
-              placeholder="Send me a message"
-            />
-            <div className="relative w-full">
-              <input
-                name="email"
-                onChange={(e) => handleChange(e)}
-                placeholder="Your email"
-                value={information.email}
-                className="w-full rounded-lg bg-zinc-900 p-2 text-sm text-white focus:outline-none focus:ring-2 focus:ring-white/40"
-              />
-              <button
-                type="submit"
-                className="absolute right-2 bottom-0 top-0 flex items-center justify-center"
-              >
-                <Image
-                  priority
-                  src={send as string}
-                  alt="send message"
-                  className="my-auto w-8 rounded-md bg-zinc-700 px-2 py-1 opacity-40 duration-200 hover:scale-105 hover:opacity-60"
-                />
-              </button>
-            </div>
-          </form>
+          <Contributions />
+          <Pictures />
+          <Mailer />
         </div>
       </main>
     </>
