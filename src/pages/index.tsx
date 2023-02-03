@@ -81,7 +81,7 @@ const Home: NextPage = () => {
             <div className="relative">
               <Image priority src={warhaus as string} alt="album of the week" />
               <button
-                onClick={async () => playPause()}
+                onClick={() => void playPause()}
                 className="absolute top-0 left-0 bottom-0 right-0 flex h-full w-full items-center justify-center duration-300 hover:scale-110"
               >
                 {playing ? (
