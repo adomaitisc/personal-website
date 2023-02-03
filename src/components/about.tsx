@@ -16,7 +16,7 @@ export function About() {
         Fullstack developer from São Paulo, based in Boston.
       </p>
       <p className="text-sm text-white/60">
-        I am currently developing{" "}
+        Currently developing{" "}
         <span className="text-white">qualidadeinteligente</span>, and studying
         Computer Science.
       </p>
