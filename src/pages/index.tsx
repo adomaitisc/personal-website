@@ -8,10 +8,45 @@ import githubContributions from "../../public/images/contributions.svg";
 import warhaus from "../../public/images/warhaus.svg";
 import noronha from "../../public/images/IMG_4382.png";
 import send from "../../public/images/send.svg";
+import play from "../../public/images/play.svg";
+import pause from "../../public/images/pause.svg";
 
 import Spline from "@splinetool/react-spline";
+import React, { useState } from "react";
 
-const Home: NextPage = () => {
+let Home: NextPage = () => {
+  let [playing, setPlaying] = useState(false);
+  let [information, setInformation] = useState({
+    message: "",
+    email: "",
+  });
+
+  let playPause = () => {
+    let audio = document.querySelector("audio");
+    if (!audio) return;
+    if (playing) {
+      audio.pause();
+      setPlaying(false);
+    } else {
+      audio.play();
+      setPlaying(true);
+    }
+  };
+
+  let handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setInformation({ ...information, [e.target.name]: e.target.value });
+  };
+
+  let handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setInformation({ message: "", email: "" });
+    // send email
+
+    console.log(information);
+  };
+
   return (
     <>
       <Head>
@@ -23,6 +58,7 @@ const Home: NextPage = () => {
         <div className="flex h-[80%] flex-col gap-[22px]">
           <div className="flex w-[366px] flex-col gap-4 rounded-2xl border border-white/10 bg-black p-6 text-white">
             <Image
+              priority
               src={profilePic}
               alt="me"
               className="h-[93px] w-[93px] rounded-full object-cover shadow-lg shadow-white/10"
@@ -38,7 +74,20 @@ const Home: NextPage = () => {
             </p>
           </div>
           <div className="flex w-[366px] items-center gap-2 rounded-2xl border border-white/10 bg-black p-2 text-white">
-            <Image src={warhaus as string} alt="album of the week" />
+            <div className="relative">
+              <Image priority src={warhaus as string} alt="album of the week" />
+              <button
+                onClick={() => playPause()}
+                className="absolute top-0 left-0 bottom-0 right-0 flex h-full w-full items-center justify-center duration-300 hover:scale-110"
+              >
+                {playing ? (
+                  <Image priority src={pause as string} alt="pause" />
+                ) : (
+                  <Image priority src={play as string} alt="play" />
+                )}
+              </button>
+              <audio src="/audio/warhaus.mp3"></audio>
+            </div>
             <p className="text-sm font-medium">{`Warhaus - Love's a Stranger`}</p>
           </div>
           <div className="flex w-[366px] flex-col rounded-2xl border border-white/10 bg-black p-6 text-white">
@@ -56,6 +105,7 @@ const Home: NextPage = () => {
             className="group flex w-[366px] cursor-pointer flex-col rounded-2xl border border-white/10 bg-black p-6 text-white"
           >
             <Image
+              priority
               src={githubContributions as string}
               alt="contributions"
               className="duration-300 group-hover:scale-110"
@@ -64,6 +114,7 @@ const Home: NextPage = () => {
           </Link>
           <div className="group relative flex w-[366px] flex-col overflow-hidden rounded-2xl border border-white/10 bg-black text-white">
             <Image
+              priority
               src={noronha}
               alt="contributions"
               className="object-fit rounded-2xl duration-300 group-hover:scale-110"
@@ -72,21 +123,38 @@ const Home: NextPage = () => {
               Fernando de Noronha
             </p>
           </div>
-          <div className="flex w-[366px] flex-col gap-[12px] rounded-2xl border border-white/10 bg-black p-3 text-white">
+          <form
+            onSubmit={(e) => handleSubmit(e)}
+            className="flex w-[366px] flex-col gap-[12px] rounded-2xl border border-white/10 bg-black p-3 text-white"
+          >
             <textarea
-              className="h-[96px] w-full rounded-lg bg-zinc-900 p-2 text-sm text-white focus:outline-none focus:ring-2 focus:ring-white/40"
+              name="message"
+              onChange={(e) => handleChange(e)}
+              defaultValue={information.message}
+              className="h-[96px] w-full resize-none rounded-lg bg-zinc-900 p-2 text-sm text-white focus:outline-none focus:ring-2 focus:ring-white/40"
               placeholder="Send me a message"
             />
             <div className="relative w-full">
               <input
+                name="email"
+                onChange={(e) => handleChange(e)}
                 placeholder="Your email"
+                defaultValue={information.email}
                 className="w-full rounded-lg bg-zinc-900 p-2 text-sm text-white focus:outline-none focus:ring-2 focus:ring-white/40"
               />
-              <button className="absolute right-6 my-auto h-full">
-                <Image src={send as string} alt="send message" />
+              <button
+                type="submit"
+                className="absolute right-2 bottom-0 top-0 flex items-center justify-center"
+              >
+                <Image
+                  priority
+                  src={send as string}
+                  alt="send message"
+                  className="my-auto w-8 rounded-md bg-zinc-700 px-2 py-1 opacity-40 duration-200 hover:scale-105 hover:opacity-60"
+                />
               </button>
             </div>
-          </div>
+          </form>
         </div>
       </main>
     </>
