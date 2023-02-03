@@ -1,8 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
-import { AnimatePresence, motion } from "framer-motion";
-
 import play from "../../public/images/play.svg";
 import pause from "../../public/images/pause.svg";
 import skip from "../../public/images/skip.svg";
@@ -16,7 +14,6 @@ export function Player() {
 
   const playPause = async () => {
     try {
-      // @ts-ignore
       const audio: HTMLAudioElement | null = audioRef?.current;
       if (!audio) return;
       if (playing) {
@@ -45,7 +42,6 @@ export function Player() {
     }
     if (playing) {
       setTimeout(() => {
-        // @ts-ignore
         audioRef.current.play();
       }, 1000);
     }
