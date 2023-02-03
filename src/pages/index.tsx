@@ -24,16 +24,20 @@ const Home: NextPage = () => {
   const playPause = () => {
     const audio = document.querySelector("audio");
     if (!audio) return;
-    try {
-      if (playing) {
+    if (playing) {
+      try {
         audio.pause();
         setPlaying(false);
-      } else {
+      } catch (e) {
+        console.log(e);
+      }
+    } else {
+      try {
         audio.play();
         setPlaying(true);
+      } catch (e) {
+        console.log(e);
       }
-    } catch (e) {
-      console.log(e);
     }
   };
 
