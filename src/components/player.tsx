@@ -16,8 +16,7 @@ export function Player() {
 
   const playPause = async () => {
     try {
-      const audio: HTMLAudioElement | null = audioRef.current;
-      console.log(audio);
+      const audio: HTMLAudioElement | null = audioRef?.current;
       if (!audio) return;
       if (playing) {
         console.log("pausing");
@@ -51,10 +50,6 @@ export function Player() {
   };
 
   useEffect(() => {
-    console.log(currentSong);
-  }, [currentSong]);
-
-  useEffect(() => {
     if (playing) {
       document.title = `${currentSong!.name} - ${currentSong!.artist}`;
     }
@@ -80,21 +75,9 @@ export function Player() {
           className="flex h-full items-center justify-center px-2 py-1 duration-300 hover:scale-125"
         >
           {playing ? (
-            <motion.div
-              initial={{ opacity: 0, scale: 0.7 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.4, type: "tween" }}
-            >
-              <Image priority src={pause as string} alt="pause" />
-            </motion.div>
+            <Image priority src={pause as string} alt="pause" />
           ) : (
-            <motion.div
-              initial={{ opacity: 0, scale: 0.7 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.4, type: "tween" }}
-            >
-              <Image priority src={play as string} alt="play" />
-            </motion.div>
+            <Image priority src={play as string} alt="play" />
           )}
         </button>
         <button
