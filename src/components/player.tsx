@@ -16,6 +16,7 @@ export function Player() {
 
   const playPause = async () => {
     try {
+      // @ts-ignore
       const audio: HTMLAudioElement | null = audioRef?.current;
       if (!audio) return;
       if (playing) {
@@ -44,6 +45,7 @@ export function Player() {
     }
     if (playing) {
       setTimeout(() => {
+        // @ts-ignore
         audioRef.current.play();
       }, 1000);
     }
