@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import profilePic from "../public/images/IMG_1294.png";
+import profilePic from "../../public/images/IMG_1294.png";
 
 export function About() {
   return (

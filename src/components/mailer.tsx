@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import Image from "next/image";
 
-import send from "../public/images/send.svg";
+import send from "../../public/images/send.svg";
 
 export function Mailer() {
   const [information, setInformation] = useState({

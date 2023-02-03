@@ -1,12 +1,12 @@
 import { type NextPage } from "next";
 import Head from "next/head";
 
-import { ThreeD } from "../../components/threed";
-import { Player } from "../../components/player";
-import { About } from "../../components/about";
-import { Contributions } from "../../components/contributions";
-import { Pictures } from "../../components/pictures";
-import { Mailer } from "../../components/mailer";
+import { ThreeD } from "../components/threed";
+import { Player } from "../components/player";
+import { About } from "../components/about";
+import { Contributions } from "../components/contributions";
+import { Pictures } from "../components/pictures";
+import { Mailer } from "../components/mailer";
 
 const Home: NextPage = () => {
   return (

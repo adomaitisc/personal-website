@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import noronha from "../public/images/IMG_4382.png";
+import noronha from "../../public/images/IMG_4382.png";
 
 export function Pictures() {
   return (

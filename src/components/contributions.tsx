@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import githubContributions from "../public/images/contributions.svg";
+import githubContributions from "../../public/images/contributions.svg";
 
 export function Contributions() {
   return (

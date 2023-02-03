@@ -1,9 +1,9 @@
 import { useState } from "react";
 import Image from "next/image";
 
-import warhaus from "../public/images/warhaus.svg";
-import play from "../public/images/play.svg";
-import pause from "../public/images/pause.svg";
+import warhaus from "../../public/images/warhaus.svg";
+import play from "../../public/images/play.svg";
+import pause from "../../public/images/pause.svg";
 
 export function Player() {
   const [playing, setPlaying] = useState(false);
