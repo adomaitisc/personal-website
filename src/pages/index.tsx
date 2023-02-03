@@ -14,15 +14,15 @@ import pause from "../../public/images/pause.svg";
 import Spline from "@splinetool/react-spline";
 import React, { useState } from "react";
 
-let Home: NextPage = () => {
-  let [playing, setPlaying] = useState(false);
-  let [information, setInformation] = useState({
+const Home: NextPage = () => {
+  const [playing, setPlaying] = useState(false);
+  const [information, setInformation] = useState({
     message: "",
     email: "",
   });
 
-  let playPause = () => {
-    let audio = document.querySelector("audio");
+  const playPause = () => {
+    const audio = document.querySelector("audio");
     if (!audio) return;
     if (playing) {
       audio.pause();
@@ -33,13 +33,13 @@ let Home: NextPage = () => {
     }
   };
 
-  let handleChange = (
+  const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     setInformation({ ...information, [e.target.name]: e.target.value });
   };
 
-  let handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setInformation({ message: "", email: "" });
     // send email
