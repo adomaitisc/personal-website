@@ -56,7 +56,7 @@ const Home: NextPage = () => {
             className="group flex w-[366px] cursor-pointer flex-col rounded-2xl border border-white/10 bg-black p-6 text-white"
           >
             <Image
-              src={githubContributions}
+              src={githubContributions as string}
               alt="contributions"
               className="duration-300 group-hover:scale-110"
             />
