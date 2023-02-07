@@ -15,7 +15,7 @@ export function About({ onLoad }: { onLoad: (e: string) => void }) {
       />
       <h1 className="text-2xl font-medium">Cauã Adomaitis</h1>
       <p className="text-sm text-white/60">
-        Fullstack developer from São Paulo, based in Boston.
+        Fullstack engineer from São Paulo, based in Boston.
       </p>
       <p className="text-sm text-white/60">
         Currently developing{" "}

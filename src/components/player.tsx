@@ -17,11 +17,9 @@ export function Player({ onLoad }: { onLoad: (e: string) => void }) {
       const audio: HTMLAudioElement | null = audioRef?.current;
       if (!audio) return;
       if (playing) {
-        console.log("pausing");
         audio.pause();
         setPlaying(false);
       } else {
-        console.log("playing");
         await audio.play();
         setPlaying(true);
       }
