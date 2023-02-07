@@ -1,9 +1,9 @@
 import Head from "next/head";
 
-export default function SEO() {
-  const title = "Cauã Adomaitis | Fullstack Dev";
+export function Metatags() {
+  const title = "Cauã Adomaitis | Fullstack Engineer";
   const description =
-    "Fullstack developer creating beautiful and functional web apps.";
+    "Fullstack engineer creating beautiful and functional web apps.";
 
   return (
     <Head>
