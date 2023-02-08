@@ -82,7 +82,7 @@ export function Mailer() {
             className="fixed bottom-6 right-0 left-0 mx-auto w-72 px-6 py-3 bg-black border border-white/10 rounded-3xl text-zinc-300 shadow-lg"
           >
             <p className="text-sm mb-1">{`Sorry for this.`}</p>
-            <p className="text-sm ">{`I cannot receive messages. The Email API has broken.`}</p>
+            <p className="text-sm ">{`I cannot receive messages. The Email API is broken.`}</p>
           </motion.div>
         )}
       </AnimatePresence>
