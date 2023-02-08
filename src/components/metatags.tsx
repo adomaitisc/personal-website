@@ -4,6 +4,8 @@ export function Metatags() {
   const title = "Cauã Adomaitis | Fullstack Engineer";
   const description =
     "Fullstack engineer creating beautiful and functional web apps.";
+  const image =
+    "https://raw.githubusercontent.com/adomaitisc/personal-website-v2/main/public/meta/image.png";
 
   return (
     <Head>
@@ -23,24 +25,15 @@ export function Metatags() {
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
-      <meta
-        name="twitter:image"
-        content="https://raw.githubusercontent.com/adomaitisc/personal-website-v2/main/public/social-1200x630.png"
-      />
+      <meta name="twitter:image" content={image} />
 
       {/* Facebook tags */}
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:type" content="website" />
       <meta property="og:url" content="https://adomaitisc.com" />
-      <meta
-        property="og:image"
-        content="https://raw.githubusercontent.com/adomaitisc/personal-website-v2/main/public/social-1200x630.png"
-      />
-      <meta
-        property="og:image:secure_url"
-        content="https://raw.githubusercontent.com/adomaitisc/personal-website-v2/main/public/social-1200x630.png"
-      />
+      <meta property="og:image" content={image} />
+      <meta property="og:image:secure_url" content={image} />
       <meta property="og:image:type" content="image/png" />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
