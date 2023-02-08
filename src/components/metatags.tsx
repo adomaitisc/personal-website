@@ -5,7 +5,7 @@ export function Metatags() {
   const description =
     "Fullstack engineer creating beautiful and functional web apps.";
   const image =
-    "https://raw.githubusercontent.com/adomaitisc/personal-website-v2/main/public/meta/image.png";
+    "https://github.com/adomaitisc/personal-website/blob/main/public/meta/image.png?raw=true";
 
   return (
     <Head>
