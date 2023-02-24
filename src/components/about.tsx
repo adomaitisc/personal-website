@@ -11,7 +11,7 @@ export function About({ onLoad }: { onLoad: (e: string) => void }) {
         priority
         src={profilePic}
         alt="me"
-        className="h-[93px] w-[93px] rounded-full object-cover shadow-lg shadow-white/10"
+        className="h-[93px] w-[93px] rounded-full object-cover"
       />
       <h1 className="text-2xl font-medium">Cauã Adomaitis</h1>
       <p className="text-sm text-white/60">

@@ -10,6 +10,7 @@ import { Pictures } from "../components/pictures";
 import { Mailer } from "../components/mailer";
 import { motion } from "framer-motion";
 import { Loader } from "../components/loader";
+import { Extension } from "../components/extension";
 
 const Home: NextPage = () => {
   const [contentLoaded, setContentLoaded] = useState<boolean>(false);
@@ -20,6 +21,7 @@ const Home: NextPage = () => {
     threeD: true,
     contributions: true,
     pictures: true,
+    extension: true,
   });
 
   const onLoad = (component: string) => {
@@ -54,7 +56,7 @@ const Home: NextPage = () => {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1 }}
         key={JSON.stringify(contentLoaded)}
-        className="flex min-h-screen w-screen flex-col items-center justify-center gap-[22px] bg-[rgb(3,3,1)] md:flex-row md:items-start"
+        className="flex flex-col items-center justify-center gap-[22px] bg-[rgb(10,10,10)] md:flex-row md:items-start"
       >
         <div className="mt-32 flex  h-full flex-col gap-[22px] md:mb-32">
           <About onLoad={(e: any) => onLoad(e)} />
@@ -68,6 +70,7 @@ const Home: NextPage = () => {
         </div>
         <div className="mb-32 flex h-full flex-col gap-[22px] md:mt-32">
           <Contributions onLoad={(e: any) => onLoad(e)} />
+          <Extension onLoad={(e: any) => onLoad(e)} />
           <Pictures onLoad={(e: any) => onLoad(e)} />
           <Mailer />
         </div>

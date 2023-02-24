@@ -62,7 +62,7 @@ export function Player({ onLoad }: { onLoad: (e: string) => void }) {
   }, [currentSong, audioRef]);
 
   return (
-    <div className="flex w-[366px] items-center justify-between gap-2 rounded-2xl border border-white/10 bg-black p-2 text-white">
+    <div className="flex w-[366px] hover:bg-white/10 duration-150 items-center justify-between gap-2 rounded-2xl border border-white/10 bg-black p-2 text-white">
       <div className="flex items-center justify-start gap-2 px-1 py-1">
         <Image
           priority
@@ -71,12 +71,12 @@ export function Player({ onLoad }: { onLoad: (e: string) => void }) {
           alt="album of the week"
           width={36}
           height={36}
-          className="rounded-md shadow shadow-white/10"
+          className="rounded-md"
         />
         <audio ref={audioRef} src={currentSong!.song}></audio>
         <p className="text-sm">{currentSong!.name}</p>
       </div>
-      <div className="flex items-center justify-start">
+      <div className="flex items-center justify-start mr-2 gap-1">
         <button
           onClick={() => void playPause()}
           className="flex h-full items-center justify-center px-2 py-1 duration-300 rounded-md hover:scale-125 hover:bg-zinc-900"

@@ -8,7 +8,7 @@ export function Contributions({ onLoad }: { onLoad: (e: string) => void }) {
     <Link
       href="https://github.com/adomaitisc"
       target="_blank"
-      className="group flex w-[366px] cursor-pointer flex-col rounded-2xl border border-white/10 bg-black p-6 text-white"
+      className="group flex w-[366px] cursor-pointer hover:bg-white/10 duration-150 flex-col rounded-2xl border border-white/10 bg-black p-6 text-white"
     >
       <Image
         onLoad={() => onLoad("contributions")}

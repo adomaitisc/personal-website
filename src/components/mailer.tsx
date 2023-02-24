@@ -79,10 +79,10 @@ export function Mailer() {
             initial={{ bottom: "-24px", opacity: 0 }}
             animate={{ bottom: "24px", opacity: 1 }}
             exit={{ bottom: "-24px", opacity: 0 }}
-            className="fixed bottom-6 right-0 left-0 mx-auto w-72 px-6 py-3 bg-black border border-white/10 rounded-3xl text-zinc-300 shadow-lg"
+            className="fixed bottom-6 right-0 left-0 mx-auto w-72 px-6 py-3 bg-black border border-white/10 rounded-xl text-zinc-300 shadow-lg"
           >
-            <p className="text-sm mb-1">{`Sorry for this.`}</p>
-            <p className="text-sm ">{`I cannot receive messages. The Email API is broken.`}</p>
+            <p className="text-sm text-white font-medium mb-1">{`Thank you for reaching out!`}</p>
+            <p className="text-sm ">{`I'll make sure to take a look at your message asap!`}</p>
           </motion.div>
         )}
       </AnimatePresence>
