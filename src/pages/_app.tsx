@@ -1,4 +1,5 @@
 import { type AppType } from "next/dist/shared/lib/utils";
+import { Analytics } from "@vercel/analytics/react";
 
 import "../styles/globals.css";
 
@@ -17,6 +18,7 @@ const MyApp: AppType = ({ Component, pageProps }) => {
         `}
       </style>
       <Component {...pageProps} />
+      <Analytics />
     </>
   );
 };
