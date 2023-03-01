@@ -56,7 +56,7 @@ const Home: NextPage = () => {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1 }}
         key={JSON.stringify(contentLoaded)}
-        className="flex flex-col items-center justify-center gap-[22px] bg-[rgb(10,10,10)] md:flex-row md:items-start"
+        className="flex flex-col items-center justify-center min-h-screen gap-[22px] bg-[rgb(10,10,10)] md:flex-row md:items-start"
       >
         <div className="mt-32 flex  h-full flex-col gap-[22px] md:mb-32">
           <About onLoad={(e: any) => onLoad(e)} />
