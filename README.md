@@ -1,1 +1,1 @@
-# Site 👉 [adomaitisc.com](https://adomaitisc.com)
+# 👉 [adomaitisc.com](https://adomaitisc.com)
