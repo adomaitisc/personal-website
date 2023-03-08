@@ -1,9 +1,9 @@
 import Head from "next/head";
 
 export function Metatags() {
-  const title = "Cauã Adomaitis | Fullstack Engineer";
+  const title = "Cauã Adomaitis | Fullstack Developer";
   const description =
-    "Fullstack engineer creating beautiful and functional web apps.";
+    "Fullstack developer creating beautiful and functional web apps.";
   const image =
     "https://github.com/adomaitisc/personal-website/blob/main/public/meta/image.png?raw=true";
 
