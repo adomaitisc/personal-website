@@ -1,8 +1,0 @@
-{
-  "rewrites": [
-    {
-      "source": "/simplelist/",
-      "destination": "https://simple-list-six.vercel.app/"
-    }
-  ]
-}
