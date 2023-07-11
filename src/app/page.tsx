@@ -33,7 +33,9 @@ export default function Home() {
         </div>
       </div>
       <div className="max-w-3xl pt-72 pb-36 text-gray-600">
-        <h1 className="text-2xl font-bold px-2">Welcome, I'm Cauã Adomaitis</h1>
+        <h1 className="text-2xl font-bold px-2">
+          Welcome, I&apos;m Cauã Adomaitis
+        </h1>
         <p className="text-lg sm:text-xl mt-2 px-2 text-gray-500 leading-tight sm:leading-normal">
           My journey as a developer started 6 years ago, developing
           web-scrapers. Currently I develop websites, web applications, and
@@ -158,9 +160,9 @@ export default function Home() {
           Thank you for you attention.
         </p>
         <p className="text-lg sm:text-xl mt-2 px-2 text-gray-500 leading-tight sm:leading-normal">
-          If you reached the end, you might have a slight idea of who am I. I'm
-          always eager to start a new project, and if you'd like to work with
-          me, feel free to send me an email.
+          If you reached the end, you might have a slight idea of who am I.
+          I&apos;m always eager to start a new project, and if you&apos;d like
+          to work with me, feel free to send me an email.
         </p>
       </div>
       {/* <aside className="group cursor-pointer absolute bottom-0 right-0 overflow-hidden w-1/3 h-1/5 hover:h-[22%] hover:-rotate-1 hover:scale-105 duration-300 ease-out rounded-tl-lg shadow-lg">
