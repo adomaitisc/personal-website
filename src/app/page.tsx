@@ -114,7 +114,7 @@ export default function Home() {
       </div>
       <hr className="w-full max-w-3xl h-0.5 bg-gray-300" />
 
-      <div className="max-w-3xl py-36 text-gray-600">
+      {/* <div className="max-w-3xl py-36 text-gray-600">
         <p className="text-gray-400 text-lg mb-6 px-2">Hobbies and interests</p>
         <div className="shadow aspect-video relative w-full border border-gray-300 bg-gray-300 rounded-3xl overflow-hidden">
           <Image
@@ -164,7 +164,7 @@ export default function Home() {
           I&apos;m always eager to start a new project, and if you&apos;d like
           to work with me, feel free to send me an email.
         </p>
-      </div>
+      </div> */}
       {/* <aside className="group cursor-pointer absolute bottom-0 right-0 overflow-hidden w-1/3 h-1/5 hover:h-[22%] hover:-rotate-1 hover:scale-105 duration-300 ease-out rounded-tl-lg shadow-lg">
         <div className="relative">
           <Image
