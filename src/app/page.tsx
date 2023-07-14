@@ -3,23 +3,29 @@ import Image from "next/image";
 import { BackgroundTiling } from "./background-tiling";
 import * as Popover from "@radix-ui/react-popover";
 import { SocialPopover } from "./socials-popover";
+import Link from "next/link";
 
 export default function Home() {
   return (
     <main
       style={{
-        backgroundImage: "url(/media/backgroundd.png)",
+        backgroundImage: "url(/media/background.png)",
         backgroundSize: "cover",
       }}
     >
       {/* Fixed Header */}
       <div className="p-24 w-full flex fixed justify-between z-20 text-white/80">
         <SocialPopover />
-        <div className="group hover:text-white hover:border-white/30 duration-200 cursor-pointer bg-zinc-600/30 backdrop-blur-3xl border border-white/20 rounded-full items-center flex pl-4 py-1 pr-1 gap-4">
-          <p className="text-xl">Get in touch</p>
-          <div className="aspect-square h-[44px] rounded-full duration-200 group-hover:rotate-6 overflow-hidden relative bg-zinc-600 grid place-items-center">
-            <Mail />
-          </div>
+        <div>
+          <Link
+            href="mailto:adomaitisc@wit.edu"
+            className="group hover:text-white hover:border-white/30 duration-200 cursor-pointer bg-zinc-600/30 backdrop-blur-3xl border border-white/20 rounded-full items-center flex pl-4 py-1 pr-1 gap-4"
+          >
+            <p className="text-xl">Get in touch</p>
+            <div className="aspect-square h-[44px] rounded-full duration-200 group-hover:rotate-6 overflow-hidden relative bg-zinc-600 grid place-items-center">
+              <Mail />
+            </div>
+          </Link>
         </div>
       </div>
 
@@ -44,16 +50,16 @@ export default function Home() {
               I build apps for web, mobile, and desktop.
             </p>
             <div className="flex gap-6">
-              <button className="group hover:text-white hover:border-white/30 duration-200 bg-zinc-600/30 backdrop-blur-3xl border border-white/20 mt-8 rounded-full text-xl flex justify-between items-center py-1 pl-4 pr-1 gap-4">
+              {/* <button className="group hover:text-white hover:border-white/30 duration-200 bg-zinc-600/30 backdrop-blur-3xl border border-white/20 mt-8 rounded-full text-xl flex justify-between items-center py-1 pl-4 pr-1 gap-4">
                 More about me
                 <div className="aspect-square h-[44px] duration-200 rounded-full overflow-hidden p-2.5 relative bg-zinc-600 grid place-items-center">
                   <div className="rounded-full border-2 border-white h-full w-full " />
                   <div className="absolute top-1/2 -translate-y-1/2 duration-200 h-1 w-1 group-hover:h-3 group-hover:w-0.5 bg-white rounded-full" />
                   <div className="absolute top-1/2 -translate-y-1/2 duration-200 h-1 w-1 group-hover:w-3 group-hover:h-0.5 bg-white rounded-full" />
                 </div>
-              </button>
+              </button> */}
               <button className="group hover:text-white hover:border-white/30 duration-200 bg-zinc-600/30 backdrop-blur-3xl border border-white/20 mt-8 rounded-full text-xl flex justify-between items-center py-1 pl-4 pr-1 gap-4">
-                Projects
+                Check out some projects
                 <div className="aspect-square h-[44px] duration-200 rounded-full overflow-hidden p-2.5 relative bg-zinc-600 grid place-items-center">
                   <div className="rounded-full border-2 border-white h-full w-full " />
                   <div className="absolute top-1/2 -translate-y-1/2 duration-200 h-1 w-1 group-hover:h-3 group-hover:w-0.5 bg-white rounded-full" />
