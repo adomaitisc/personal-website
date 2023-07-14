@@ -6,3 +6,41 @@ body {
   color: rgb(var(--foreground-rgb));
   background: rgb(22, 20, 19);
 }
+
+@keyframes animate-tile {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  75% {
+    opacity: 1;
+  }
+}
+
+@keyframes animate-tile-2 {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  75% {
+    opacity: 1;
+  }
+}
+
+.tile {
+  animation-name: animate-tile;
+}
+
+.tile-2 {
+  animation-name: animate-tile-2;
+}
