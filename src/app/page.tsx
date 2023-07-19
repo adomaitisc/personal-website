@@ -112,7 +112,7 @@ export default function Home() {
         {/* Images */}
         <div className="w-full mt-32 space-y-4">
           <h2 className="text-2xl text-neutral-600 tracking-wide">
-            latest creations at Aditis
+            latest creations at aditis
           </h2>
           <div
             className="aspect-video w-full flex justify-center items-center rounded-3xl border border-neutral-800"
