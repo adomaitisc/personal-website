@@ -44,7 +44,7 @@ export default function Home() {
             </Link>
             <Link
               href="mailto:hello@adomaitisc.com"
-              className="aspect-square h-[44px] rounded-full overflow-hidden grid place-items-center hover:text-neutral-300 hover:bg-neutral-800 duration-200 cursor-pointer"
+              className="aspect-square h-[44px] rounded-full overflow-hidden grid place-items-center text-neutral-600 hover:text-neutral-900 hover:bg-white bg-neutral-200 duration-200 cursor-pointer"
             >
               <Mail size={18} />
             </Link>
@@ -122,7 +122,6 @@ export default function Home() {
                 "repeating-radial-gradient( circle at 0 0, transparent 0, #58785d 30px ), repeating-linear-gradient( #010101, #58785d )",
               backgroundBlendMode: "multiply",
               backgroundSize: "100%",
-              backgroundPosition: "center",
             }}
           >
             <div className="relative w-4/5 aspect-video">
