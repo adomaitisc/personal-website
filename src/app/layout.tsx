@@ -8,6 +8,22 @@ export const metadata: Metadata = {
   title: "fullstack developer | cauã adomaitis",
   description:
     "full-stack developer from brazil, based in boston. passionate about creativity, innovation, and crafting exceptional user experiences. get in touch to collaborate.",
+  openGraph: {
+    title: "fullstack developer | cauã adomaitis",
+    description:
+      "full-stack developer from brazil, based in boston. passionate about creativity, innovation, and crafting exceptional user experiences. get in touch to collaborate.",
+    url: "https://adomaitisc.com",
+    type: "website",
+    siteName: "cauã adomaitis",
+  },
+  twitter: {
+    title: "fullstack developer | cauã adomaitis",
+    description:
+      "full-stack developer from brazil, based in boston. passionate about creativity, innovation, and crafting exceptional user experiences. get in touch to collaborate.",
+    card: "summary_large_image",
+    site: "@adomaitisc",
+    creator: "@adomaitisc",
+  },
   generator: "Vercel",
   applicationName: "caua adomaitis | personal website",
   referrer: "origin-when-cross-origin",
