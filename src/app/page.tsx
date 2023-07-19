@@ -93,7 +93,7 @@ export default function Home() {
               >
                 wentworth institute of technology
               </Link>
-              .
+              . get in touch via email to collaborate on something cool.
             </Balancer>
           </h1>
         </div>
