@@ -133,7 +133,7 @@ export default function Home() {
               />
             </div>
           </div>
-          <div className="flex gap-4">
+          <div className="flex gap-4 flex-col md:flex-row">
             <div className="aspect-video w-full flex justify-center items-center rounded-3xl border border-neutral-800 bg-neutral-900/20">
               <div className="relative w-4/5 aspect-video">
                 <Image
