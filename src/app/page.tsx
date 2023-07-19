@@ -43,7 +43,7 @@ export default function Home() {
               <Linkedin size={18} />
             </Link>
             <Link
-              href="mailto:adomaitisc@wit.edu"
+              href="mailto:hello@adomaitisc.com"
               className="aspect-square h-[44px] rounded-full overflow-hidden grid place-items-center hover:text-neutral-300 hover:bg-neutral-800 duration-200 cursor-pointer"
             >
               <Mail size={18} />
@@ -100,7 +100,7 @@ export default function Home() {
             <Balancer>
               get in touch via{" "}
               <Link
-                href="mailto:adomaitisc@wit.edu"
+                href="mailto:hello@adomaitisc.com"
                 className="text-neutral-500 hover:text-neutral-300 hover:underline duration-200"
               >
                 email
