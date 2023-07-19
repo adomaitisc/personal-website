@@ -1,31 +1,34 @@
 import "./globals.css";
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/react";
 import { Questrial } from "next/font/google";
 
 const questrial = Questrial({ weight: "400", subsets: ["latin"] });
 
+const creator = "cauã adomaitis";
+const title = "cauã adomaitis | fullstack developer";
+const description =
+  "full-stack developer from brazil, based in boston. passionate about creativity, innovation, and crafting exceptional user experiences. get in touch to collaborate.";
+
 export const metadata: Metadata = {
-  title: "fullstack developer | cauã adomaitis",
-  description:
-    "full-stack developer from brazil, based in boston. passionate about creativity, innovation, and crafting exceptional user experiences. get in touch to collaborate.",
+  title,
+  description,
   openGraph: {
-    title: "fullstack developer | cauã adomaitis",
-    description:
-      "full-stack developer from brazil, based in boston. passionate about creativity, innovation, and crafting exceptional user experiences. get in touch to collaborate.",
+    title,
+    description,
     url: "https://adomaitisc.com",
     type: "website",
-    siteName: "cauã adomaitis",
+    siteName: title,
   },
   twitter: {
-    title: "fullstack developer | cauã adomaitis",
-    description:
-      "full-stack developer from brazil, based in boston. passionate about creativity, innovation, and crafting exceptional user experiences. get in touch to collaborate.",
+    title,
+    description,
     card: "summary_large_image",
     site: "@adomaitisc",
     creator: "@adomaitisc",
   },
   generator: "Vercel",
-  applicationName: "caua adomaitis | personal website",
+  applicationName: title,
   referrer: "origin-when-cross-origin",
   keywords: [
     "Next.js",
@@ -65,11 +68,11 @@ export const metadata: Metadata = {
   ],
   category: "developer",
   manifest: "/manifest.json",
-  authors: { name: "caua", url: "https://adomaitisc.com" },
+  authors: { name: creator, url: "https://adomaitisc.com" },
   colorScheme: "dark",
   themeColor: "#333333",
-  creator: "Cauã Adomaitis",
-  publisher: "Cauã Adomaitis",
+  creator,
+  publisher: creator,
 };
 
 export default function RootLayout({
@@ -79,7 +82,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={questrial.className}>{children}</body>
+      <body className={questrial.className}>
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
