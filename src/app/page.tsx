@@ -93,14 +93,26 @@ export default function Home() {
               >
                 wentworth institute of technology
               </Link>
-              . get in touch via email to collaborate on something cool.
+              .
+            </Balancer>
+          </h1>
+          <h1 className="text-2xl tracking-wide">
+            <Balancer>
+              get in touch via{" "}
+              <Link
+                href="mailto:adomaitisc@wit.edu"
+                className="text-neutral-500 hover:text-neutral-300 hover:underline duration-200"
+              >
+                email
+              </Link>{" "}
+              to create something cool.
             </Balancer>
           </h1>
         </div>
         {/* Images */}
         <div className="w-full mt-32 space-y-4">
           <h2 className="text-2xl text-neutral-600 tracking-wide">
-            Latest work at Aditis
+            latest creations at Aditis
           </h2>
           <div
             className="aspect-video w-full flex justify-center items-center rounded-3xl border border-neutral-800"
