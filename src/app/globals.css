@@ -7,40 +7,11 @@ body {
   background: rgb(22, 20, 19);
 }
 
-@keyframes animate-tile {
-  0% {
-    opacity: 1;
+@keyframes shine {
+  from {
+    filter: brightness(2);
   }
-  25% {
-    opacity: 0.8;
+  to {
+    filter: brightness(1);
   }
-  50% {
-    opacity: 0.5;
-  }
-  75% {
-    opacity: 1;
-  }
-}
-
-@keyframes animate-tile-2 {
-  0% {
-    opacity: 1;
-  }
-  25% {
-    opacity: 0.3;
-  }
-  50% {
-    opacity: 0.5;
-  }
-  75% {
-    opacity: 1;
-  }
-}
-
-.tile {
-  animation-name: animate-tile;
-}
-
-.tile-2 {
-  animation-name: animate-tile-2;
 }

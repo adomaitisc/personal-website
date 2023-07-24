@@ -2,6 +2,7 @@ import { Github, Linkedin, Mail } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { Balancer } from "react-wrap-balancer";
+import { TextReveal } from "./text-reveal";
 
 export default function Home() {
   return (
@@ -23,7 +24,7 @@ export default function Home() {
               />
             </div>
             <h1 className="pr-4 my-auto text-lg md:text-xl font-bold">
-              hello there
+              <TextReveal>hello there</TextReveal>
             </h1>
           </div>
           {/* <p className="md:hidden block text-white">sm</p> */}
@@ -93,6 +94,7 @@ export default function Home() {
               user experience is my main goal.
             </Balancer>
           </h1>
+
           <h1 className="text-2xl tracking-wide">
             <Balancer>
               currenlty creating things at{" "}
