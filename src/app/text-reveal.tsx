@@ -2,19 +2,22 @@
 
 import React, { ReactElement, useEffect, useRef, useState } from "react";
 
-const chars = "abcdefghijklmnopqrstuvwxyz";
+const chars = "abcdefghijklmnopqrstuvwxyz123456789";
 
-function randomizeText(iterations: number, text: string) {
-  const size = text.length;
+function getStringByIndex(
+  currentIndex: number,
+  startReveal: number,
+  text: string
+) {
   return text
     .split("")
     .map((char, index) => {
-      if (index <= iterations / 10) return char;
       if (char.match(/[^a-zA-Z]/)) return char;
-
-      return chars[Math.floor(Math.random() * 26)];
+      if (index + startReveal <= currentIndex) return char;
+      return chars[Math.floor(Math.random() * chars.length)];
     })
-    .join("");
+    .join("")
+    .substring(0, currentIndex);
 }
 
 export function TextReveal({ children }: { children: React.ReactNode }) {
@@ -23,14 +26,23 @@ export function TextReveal({ children }: { children: React.ReactNode }) {
   const text = children as string;
 
   useEffect(() => {
+    // start by revealing the randomizedText index by index
     let iterations = 0;
+    let index = 0;
+    let startReveal = text.length * 0.5;
+    let endReveal = text.length * 1.5;
+
     const interval: any = setInterval(() => {
-      if (iterations >= text.length * 10) {
+      if (index > endReveal) {
+        clearInterval(interval);
         setIsFinished(true);
-        return clearInterval(interval);
       }
 
-      setReveal(randomizeText(iterations, text));
+      setReveal(getStringByIndex(index, startReveal, text));
+      // make iterations update once every 3 iterations
+      if (iterations % 2 === 0) {
+        index++;
+      }
       iterations++;
     }, 20);
   }, []);
