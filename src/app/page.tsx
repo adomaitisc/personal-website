@@ -136,8 +136,41 @@ export default function Home() {
             </Balancer>
           </h1>
         </div>
+        {/* Projects */}
+        <div className="w-full flex flex-col gap-20 mt-20">
+          <div className="space-y-4">
+            <h2 className="text-2xl text-neutral-600 tracking-wide">
+              simple bookmarks
+            </h2>
+            <h3 className="text-2xl tracking-wide">
+              <Balancer>
+                bookmarking web app, open to public, authentication with nextjs,
+                keyboard navigation, inspired by rauno.
+              </Balancer>
+            </h3>
+            <div className="flex flex-col gap-4">
+              <div className="h-80 relative border border-neutral-800 rounded-3xl overflow-hidden">
+                <Image
+                  src="/media/simple-bookmarks.png"
+                  alt="bookmarks"
+                  width={873 / 2}
+                  height={178 / 2}
+                  className="absolute brightness-95 bottom-0 left-20 h-4/5 w-3/4"
+                />
+              </div>
+            </div>
+          </div>
+          <div className="space-y-4">
+            <h2 className="text-2xl text-neutral-600 tracking-wide">
+              simac solution
+            </h2>
+            <div className="flex flex-col gap-4">
+              <div className="h-40 border border-neutral-800 p-6 rounded-3xl"></div>
+            </div>
+          </div>
+        </div>
         {/* Images */}
-        <div className="w-full mt-32 space-y-4">
+        <div className="w-full mt-20 space-y-4">
           <h2 className="text-2xl text-neutral-600 tracking-wide">
             latest creations at aditis
           </h2>
