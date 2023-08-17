@@ -103,7 +103,7 @@ export default function Home() {
                 className="text-neutral-500 hover:text-neutral-300 hover:underline duration-200"
               >
                 qualidade inteligente
-              </Link>{" "}
+              </Link>
               , for friends, and for fun.
             </Balancer>
           </h1>
