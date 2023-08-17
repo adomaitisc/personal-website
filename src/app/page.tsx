@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail } from "lucide-react";
+import { ExternalLink, Github, Linkedin, Mail } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { Balancer } from "react-wrap-balancer";
@@ -88,15 +88,15 @@ export default function Home() {
             <Balancer>
               <span className="text-neutral-500">cauã adomaitis</span>,
               fullstack developer from brazil, based in boston. moved by
-              creativity and innovation, from eccentric design decisions to
-              complex code and organized database management. crafting a great
-              user experience is my main goal.
+              creativity and innovation, from product design to complex coding
+              and organized system design. crafting a great product is my main
+              goal.
             </Balancer>
           </h1>
 
           <h1 className="text-2xl tracking-wide">
             <Balancer>
-              currenlty creating things at{" "}
+              creating for{" "}
               <Link
                 href="https://qualidadeinteligente.com.br/"
                 target="_blank"
@@ -104,15 +104,12 @@ export default function Home() {
               >
                 qualidade inteligente
               </Link>{" "}
-              and{" "}
-              <Link
-                href="https://aditis.com.br"
-                target="_blank"
-                className="text-neutral-500 hover:text-neutral-300 hover:underline duration-200"
-              >
-                aditis
-              </Link>
-              . studying computer science at{" "}
+              , for friends, and for fun.
+            </Balancer>
+          </h1>
+          <h1 className="text-2xl tracking-wide">
+            <Balancer>
+              studying computer science at{" "}
               <Link
                 href="https://wit.edu/"
                 target="_blank"
@@ -125,6 +122,18 @@ export default function Home() {
           </h1>
           <h1 className="text-2xl tracking-wide">
             <Balancer>
+              co-founder of{" "}
+              <Link
+                href="mailto:hello@adomaitisc.com"
+                className="text-neutral-500 hover:text-neutral-300 hover:underline duration-200"
+              >
+                aditis
+              </Link>
+              , my first saas.
+            </Balancer>
+          </h1>
+          {/* <h1 className="text-2xl tracking-wide">
+            <Balancer>
               get in touch via{" "}
               <Link
                 href="mailto:hello@adomaitisc.com"
@@ -134,46 +143,88 @@ export default function Home() {
               </Link>{" "}
               to create something cool.
             </Balancer>
-          </h1>
+          </h1> */}
         </div>
         {/* Projects */}
         <div className="w-full flex flex-col gap-20 mt-20">
           <div className="space-y-4">
-            <h2 className="text-2xl text-neutral-600 tracking-wide">
-              simple bookmarks
+            <h2 className="text-2xl tracking-wide">
+              <Link
+                href="https://simple-bookmarks-six.vercel.app"
+                target="_blank"
+                className="text-neutral-500 flex gap-3 items-center hover:text-neutral-300 hover:underline duration-200"
+              >
+                simple bookmarks
+                <ExternalLink size={22} />
+              </Link>
             </h2>
             <h3 className="text-2xl tracking-wide">
               <Balancer>
-                bookmarking web app, open to public, authentication with nextjs,
-                keyboard navigation, inspired by rauno.
+                bookmarking web app, open to public, auth with github oauth.
+                made it over a weekend after weeks waiting for a response from
+                rauno, the original creator.
               </Balancer>
             </h3>
-            <div className="flex flex-col gap-4">
-              <div className="h-80 relative border border-neutral-800 rounded-3xl overflow-hidden">
-                <Image
-                  src="/media/simple-bookmarks.png"
-                  alt="bookmarks"
-                  width={873 / 2}
-                  height={178 / 2}
-                  className="absolute brightness-95 bottom-0 left-20 h-4/5 w-3/4"
-                />
+            <div
+              className="aspect-video border border-neutral-800 rounded-3xl overflow-hidden py-10"
+              style={{
+                backgroundColor: "#58785d",
+                backgroundImage:
+                  "repeating-radial-gradient( circle at 0 0, transparent 0, #58785d 30px ), repeating-linear-gradient( #010101, #58785d )",
+                backgroundBlendMode: "multiply",
+                backgroundSize: "100%",
+              }}
+            >
+              <div className="relative aspect-video w-4/5 mx-auto my-auto">
+                <Image src="/media/simple-bookmarks.png" alt="bookmarks" fill />
               </div>
             </div>
           </div>
           <div className="space-y-4">
-            <h2 className="text-2xl text-neutral-600 tracking-wide">
-              simac solution
+            <h2 className="text-2xl tracking-wide">
+              <Link
+                href="https://solucao-simac.vercel.app"
+                target="_blank"
+                className="text-neutral-500 flex gap-3 items-center hover:text-neutral-300 hover:underline duration-200"
+              >
+                simac solution
+                <ExternalLink size={22} />
+              </Link>
             </h2>
-            <div className="flex flex-col gap-4">
-              <div className="h-40 border border-neutral-800 p-6 rounded-3xl"></div>
+            <h3 className="text-2xl tracking-wide">
+              <Balancer>
+                the website from brazil{"'"}s government is broken. the ssl
+                certificate is invalid, and the server is (very) unstable. my
+                solution is reliable and fast.
+              </Balancer>
+            </h3>
+            <div
+              className="aspect-video border border-neutral-800 rounded-3xl overflow-hidden py-10"
+              style={{
+                backgroundColor: "#58785d",
+                backgroundImage:
+                  "repeating-radial-gradient( circle at 0 0, transparent 0, #58785d 30px ), repeating-linear-gradient( #010101, #58785d )",
+                backgroundBlendMode: "multiply",
+                backgroundSize: "100%",
+              }}
+            >
+              <div className="relative aspect-video w-4/5 mx-auto my-auto">
+                <Image src="/media/simac-solution.png" alt="simac" fill />
+              </div>
             </div>
           </div>
         </div>
         {/* Images */}
         <div className="w-full mt-20 space-y-4">
-          <h2 className="text-2xl text-neutral-600 tracking-wide">
-            latest creations at aditis
+          <h2 className="text-2xl text-neutral-500 tracking-wide">
+            aditis technological control
           </h2>
+          <h3 className="text-2xl tracking-wide">
+            <Balancer>
+              currently crafting a solution for construction companies to track
+              the progress of their concrete puring and testing.
+            </Balancer>
+          </h3>
           <div
             className="aspect-video w-full flex justify-center items-center rounded-3xl border border-neutral-800"
             style={{
@@ -186,14 +237,14 @@ export default function Home() {
           >
             <div className="relative w-4/5 aspect-video">
               <Image
-                src="/media/aditis-window.png"
+                src="/media/aditis.png"
                 alt="aditis"
                 fill
                 className="brightness-95"
               />
             </div>
           </div>
-          <div className="flex gap-4 flex-col md:flex-row">
+          {/* <div className="flex gap-4 flex-col md:flex-row">
             <div className="aspect-video w-full flex justify-center items-center rounded-3xl border border-neutral-800 bg-neutral-900/20">
               <div className="relative w-4/5 aspect-video">
                 <Image
@@ -214,7 +265,7 @@ export default function Home() {
                 />
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
         {/* Footer */}
         <div className=" text-neutral-500 max-w-4xl w-full mt-32 flex flex-col gap-2 md:flex-row items-center md:justify-between">
