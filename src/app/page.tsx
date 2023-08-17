@@ -124,7 +124,7 @@ export default function Home() {
             <Balancer>
               co-founder of{" "}
               <Link
-                href="mailto:hello@adomaitisc.com"
+                href="https://www.aditis.com.br"
                 className="text-neutral-500 hover:text-neutral-300 hover:underline duration-200"
               >
                 aditis
