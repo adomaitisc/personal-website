@@ -222,7 +222,7 @@ export default function Home() {
           <h3 className="text-2xl tracking-wide">
             <Balancer>
               currently crafting a solution for construction companies to track
-              the progress of their concrete puring and testing.
+              the progress of their concrete pouring and testing.
             </Balancer>
           </h3>
           <div
