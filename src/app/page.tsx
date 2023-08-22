@@ -9,7 +9,7 @@ export default function Home() {
     <main
       className="
     p-4 md:p-24
-    bg-black/50 select-none flex flex-col items-center"
+    bg-black/50 select-none flex flex-col items-center relative"
     >
       {/* Fixed Header */}
       <div className="fixed w-full px-4 z-10 md:px-24">
@@ -180,6 +180,41 @@ export default function Home() {
               </div>
             </div>
           </div>
+          <div className="w-full flex flex-col gap-20 mt-20">
+            <div className="space-y-4">
+              <h2 className="text-2xl tracking-wide">
+                <Link
+                  href="https://inspectgpt.com"
+                  target="_blank"
+                  className="text-neutral-500 flex gap-3 items-center hover:text-neutral-300 hover:underline duration-200"
+                >
+                  inspect gpt
+                  <ExternalLink size={22} />
+                </Link>
+              </h2>
+              <h3 className="text-2xl tracking-wide">
+                <Balancer>
+                  chrome extension developed at the gpt boom, designed to
+                  identify ai-generated content on almost every webpage. someone
+                  even copied it from my github.
+                </Balancer>
+              </h3>
+              <div
+                className="aspect-video border border-neutral-800 rounded-3xl overflow-hidden py-10"
+                style={{
+                  backgroundColor: "#58785d",
+                  backgroundImage:
+                    "repeating-radial-gradient( circle at 0 0, transparent 0, #58785d 30px ), repeating-linear-gradient( #010101, #58785d )",
+                  backgroundBlendMode: "multiply",
+                  backgroundSize: "100%",
+                }}
+              >
+                <div className="relative aspect-video w-4/5 mx-auto my-auto">
+                  <Image src="/media/inspect.png" alt="bookmarks" fill />
+                </div>
+              </div>
+            </div>
+          </div>
           <div className="space-y-4">
             <h2 className="text-2xl tracking-wide">
               <Link
@@ -222,7 +257,8 @@ export default function Home() {
           <h3 className="text-2xl tracking-wide">
             <Balancer>
               currently crafting a solution for construction companies to track
-              the progress of their concrete pouring and testing.
+              the progress of their concrete pouring and testing. adits is
+              becoming my first company.
             </Balancer>
           </h3>
           <div
