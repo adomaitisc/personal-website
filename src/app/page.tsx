@@ -252,7 +252,7 @@ export default function Home() {
         {/* Images */}
         <div className="w-full mt-20 space-y-4">
           <h2 className="text-2xl text-neutral-500 tracking-wide">
-            aditis technological control
+            aditis technologies
           </h2>
           <h3 className="text-2xl tracking-wide">
             <Balancer>
