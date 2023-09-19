@@ -90,7 +90,6 @@ export default function RootLayout({
       <body className={questrial.className}>
         {children}
         <Analytics />
-        <ScrollThing />
       </body>
     </html>
   );
