@@ -4,6 +4,11 @@ import Link from "next/link";
 import { Balancer } from "react-wrap-balancer";
 import { TextReveal } from "./text-reveal";
 import { Contributions } from "./contributions";
+import { Project } from "./project";
+import { Header } from "./header";
+import { Footer } from "./footer";
+
+// http://localhost:3000
 
 async function getContributions() {
   let thisYear = new Date().getFullYear();
@@ -19,96 +24,29 @@ async function getContributions() {
 
 export default async function Home() {
   const ghub = await getContributions();
-
-  console.log(ghub);
-
   return (
     <>
-      <div className="fixed w-full px-4 z-10 md:px-24 top-16">
-        <div className="max-w-4xl mx-auto w-full flex justify-between">
-          <div className="flex gap-2 hover:border-neutral-700 text-neutral-500 hover:text-neutral-300 duration-300 bg-black/20 backdrop-blur-xl border border-neutral-800 rounded-[27px] overflow-hidden p-1">
-            <div className="aspect-square h-[44px] rounded-full overflow-hidden relative">
-              <Image
-                alt="wow"
-                fill
-                src="/media/logo.svg"
-                className="animate-spin"
-              />
-            </div>
-            <h1 className="pr-4 my-auto text-lg md:text-xl font-bold">
-              <TextReveal>hello there</TextReveal>
-            </h1>
-          </div>
-          {/* <p className="md:hidden block text-white">sm</p> */}
-          <div className="flex gap-2 hover:border-neutral-700 text-neutral-500 duration-300 bg-black/20 backdrop-blur-xl border border-neutral-800 rounded-[27px] overflow-hidden p-1">
-            <Link
-              href="https://github.com/adomaitisc"
-              target="_blank"
-              className="aspect-square h-[44px] rounded-full overflow-hidden grid text-neutral-500 place-items-center hover:text-neutral-300 hover:bg-neutral-800 duration-200 cursor-pointer"
-            >
-              <Github size={18} />
-            </Link>
-            <Link
-              href="https://linkedin.com/in/cauaadomaitis"
-              target="_blank"
-              className="aspect-square h-[44px] rounded-full overflow-hidden grid text-neutral-500 place-items-center hover:text-neutral-300 hover:bg-neutral-800 duration-200 cursor-pointer"
-            >
-              <Linkedin size={18} />
-            </Link>
-            <Link
-              href="https://read.cv/adomaitis"
-              target="_blank"
-              className="group aspect-square h-[44px] rounded-full overflow-hidden grid text-neutral-500 place-items-center hover:text-neutral-300 hover:bg-neutral-800 duration-200 cursor-pointer"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="28"
-                height="28"
-                viewBox="0 0 28 28"
-              >
-                <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  d="M10.809 5.242a1.25 1.25 0 00-1.531.884L6.042 18.2a1.25 1.25 0 00.884 1.53l9.66 2.59a1.25 1.25 0 001.53-.885l3.236-12.074a1.25 1.25 0 00-.884-1.53l-9.66-2.589zm-2.98.496a2.75 2.75 0 013.368-1.945l9.66 2.588A2.75 2.75 0 0122.8 9.75l-3.236 12.074a2.75 2.75 0 01-3.368 1.945L6.538 21.18a2.75 2.75 0 01-1.944-3.368L7.829 5.738z"
-                  fill="currentColor"
-                ></path>
-                <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  d="M10.518 8.27a.75.75 0 01.919-.53l7.241 1.94a.75.75 0 01-.388 1.449l-7.242-1.94a.75.75 0 01-.53-.919zM9.677 11.41a.75.75 0 01.918-.531l7.242 1.94a.75.75 0 11-.388 1.45l-7.242-1.941a.75.75 0 01-.53-.919zM8.836 14.549a.75.75 0 01.918-.53l4.83 1.293a.75.75 0 11-.388 1.45l-4.83-1.295a.75.75 0 01-.53-.918z"
-                  fill="currentColor"
-                ></path>
-              </svg>
-            </Link>
-            <Link
-              href="mailto:hello@adomaitisc.com"
-              className="aspect-square h-[44px] rounded-full overflow-hidden grid place-items-center text-neutral-600 hover:text-neutral-900 hover:bg-white bg-neutral-200 duration-200 cursor-pointer"
-            >
-              <Mail size={18} />
-            </Link>
-          </div>
-        </div>
-      </div>
+      {/* Header */}
+      <Header />
+
       <main
         id="scroll"
-        className="
-      p-4 md:p-24
-      bg-black/50 select-none flex flex-col items-center h-screen w-full relative overflow-hidden"
+        className="p-4 md:p-24 bg-black/50 select-none flex flex-col items-center h-screen w-full relative overflow-hidden"
       >
         {/* Content */}
         <div
           className="
         pt-48 max-w-4xl mx-auto flex-col relative flex gap-4 justify-center items-center"
         >
-          {/* Text */}
           <div className="flex-1 space-y-8 text-neutral-200">
+            <h1 className="text-7xl opacity-5">cauã adomaitis</h1>
+
             <h1 className="text-2xl tracking-wide">
               <Balancer>
-                <span className="text-neutral-500">cauã adomaitis</span>,
-                fullstack developer from brazil, based in boston. moved by
-                creativity and innovation, from product design to complex coding
-                and organized system design. crafting a great product is my main
-                goal.
+                hello there, i&apos;m a fullstack developer from brazil, based
+                in boston. moved by creativity and innovation, from product
+                design to complex coding and organized system design. crafting a
+                great product is my main goal.
               </Balancer>
             </h1>
 
@@ -150,236 +88,57 @@ export default async function Home() {
                 , my first saas.
               </Balancer>
             </h1>
-            {/* <h1 className="text-2xl tracking-wide">
-            <Balancer>
-            get in touch via{" "}
-            <Link
-            href="mailto:hello@adomaitisc.com"
-            className="text-neutral-500 hover:text-neutral-300 hover:underline duration-200"
-            >
-            email
-            </Link>{" "}
-            to create something cool.
-            </Balancer>
-          </h1> */}
           </div>
+
+          {/* New Projects */}
+
           {/* Projects */}
-          <div className="w-full flex flex-col gap-20 mt-20">
-            <div className="w-full flex flex-col gap-20 mt-20">
-              <div className="space-y-4">
-                <h2 className="text-2xl tracking-wide">
-                  <Link
-                    href="https://github-contributions-api-pied.vercel.app/"
-                    target="_blank"
-                    className="text-neutral-500 inline-block hover:text-neutral-300 hover:underline duration-200"
-                  >
-                    <span className="flex gap-3 items-center justify-center">
-                      github contributions api
-                      <ExternalLink size={22} />
-                    </span>
-                  </Link>
-                </h2>
-                <h3 className="text-2xl tracking-wide">
-                  <Balancer>
-                    simple api made with next.js hosted on vercel that scrapes
-                    the desired user&apos;s github contributions calendar and
-                    returns a json object with data for the graph.
-                  </Balancer>
-                </h3>
-                <div className="md:block hidden">
-                  <div className="pt-8" />
-                  <Contributions data={ghub} />
-                  <div className="pt-8" />
-                </div>
-                <div className="md:hidden block">
-                  <h3 className="text-2xl tracking-wide text-neutral-500">
-                    <Balancer>
-                      sorry, the github contribution graph is not available at
-                      you screen size.
-                    </Balancer>
-                  </h3>
-                </div>
-              </div>
-            </div>
-            <div className="space-y-4">
-              <h2 className="text-2xl tracking-wide">
-                <Link
-                  href="https://simple-bookmarks-six.vercel.app"
-                  target="_blank"
-                  className="text-neutral-500 inline-block hover:text-neutral-300 hover:underline duration-200"
-                >
-                  <span className="flex gap-3 items-center justify-center">
-                    simple bookmarks
-                    <ExternalLink size={22} />
-                  </span>
-                </Link>
-              </h2>
-              <h3 className="text-2xl tracking-wide">
-                <Balancer>
-                  bookmarking web app, open to public, auth with github oauth.
+          <div className="w-full flex flex-col pt-10">
+            <h1 className="text-7xl pt-20 opacity-5">a few projects</h1>
+            <Project
+              title="github contributions api"
+              link="https://github-contributions-api-pied.vercel.app/"
+              description="simple api made with next.js hosted on vercel that scrapes the
+                  desired user's github contributions calendar and returns
+                  a json object with data for the graph."
+            >
+              <Contributions data={ghub} />
+            </Project>
+            <Project
+              title="simple bookmarks"
+              link="https://simple-bookmarks-six.vercel.app"
+              description="bookmarking web app, open to public, auth with github oauth.
                   made it over a weekend after weeks waiting for a response from
-                  rauno, the original creator.
-                </Balancer>
-              </h3>
-              <div className="aspect-video rounded-3xl overflow-hidden py-10">
-                <div className="relative aspect-video w-full mx-auto my-auto">
-                  <Image
-                    src="/media/simple-bookmarks.png"
-                    alt="bookmarks"
-                    fill
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="w-full flex flex-col gap-20 mt-20">
-              <div className="space-y-4">
-                <h2 className="text-2xl tracking-wide">
-                  <Link
-                    href="https://inspectgpt.com"
-                    target="_blank"
-                    className="text-neutral-500 inline-block hover:text-neutral-300 hover:underline duration-200"
-                  >
-                    <span className="flex gap-3 items-center justify-center">
-                      inspect gpt
-                      <ExternalLink size={22} />
-                    </span>
-                  </Link>
-                </h2>
-                <h3 className="text-2xl tracking-wide">
-                  <Balancer>
-                    chrome extension developed at the gpt boom, designed to
-                    identify ai-generated content on almost every webpage.
-                    someone even copied it from my github.
-                  </Balancer>
-                </h3>
-                <div className="aspect-video rounded-3xl overflow-hidden py-10">
-                  <div className="relative aspect-video w-full mx-auto my-auto">
-                    <Image src="/media/inspect.png" alt="bookmarks" fill />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="space-y-4">
-              <h2 className="text-2xl tracking-wide">
-                <Link
-                  href="https://solucao-simac.vercel.app"
-                  target="_blank"
-                  className="text-neutral-500 inline-block hover:text-neutral-300 hover:underline duration-200"
-                >
-                  <span className="flex gap-3 items-center justify-center">
-                    simac solution
-                    <ExternalLink size={22} />
-                  </span>
-                </Link>
-              </h2>
-              <h3 className="text-2xl tracking-wide">
-                <Balancer>
-                  the website from brazil{"'"}s government is broken. the ssl
+                  rauno, the original creator."
+              image="/media/simple-bookmarks.png"
+            />
+            <Project
+              title="inspect gpt"
+              link="https://inspectgpt.com"
+              description="chrome extension developed at the gpt boom, designed to
+                  identify ai-generated content on almost every webpage. someone
+                  even copied it from my github."
+              image="/media/inspect.png"
+            />
+            <Project
+              title="simac solution"
+              link="https://solucao-simac.vercel.app"
+              description="the website from brazil's government is broken. the ssl
                   certificate is invalid, and the server is (very) unstable. my
-                  solution is reliable and fast.
-                </Balancer>
-              </h3>
-              <div className="aspect-video rounded-3xl overflow-hidden py-10">
-                <div className="relative aspect-video w-full mx-auto my-auto">
-                  <Image src="/media/simac-solution.png" alt="simac" fill />
-                </div>
-              </div>
-            </div>
-          </div>
-          {/* Images */}
-          <div className="w-full mt-20 space-y-4">
-            <h2 className="text-2xl text-neutral-500 tracking-wide">
-              aditis technologies
-            </h2>
-            <h3 className="text-2xl tracking-wide">
-              <Balancer>
-                currently crafting a solution for construction companies to
-                track the progress of their concrete pouring and testing. adits
-                is becoming my first company.
-              </Balancer>
-            </h3>
-            <div className="aspect-video w-full flex justify-center items-center rounded-3xl">
-              <div className="relative w-full aspect-video">
-                <Image
-                  src="/media/aditis.png"
-                  alt="aditis"
-                  fill
-                  className="brightness-95"
-                />
-              </div>
-            </div>
-            {/* <div className="flex gap-4 flex-col md:flex-row">
-            <div className="aspect-video w-full flex justify-center items-center rounded-3xl border border-neutral-800 bg-neutral-900/20">
-            <div className="relative w-full aspect-video">
-            <Image
-            src="/media/aditis-close-1.png"
-            alt="aditis"
-            fill
-            className="rounded-md brightness-95"
+                  solution is reliable and fast."
+              image="/media/simac-solution.png"
             />
-            </div>
-            </div>
-            <div className="aspect-video w-full flex justify-center items-center rounded-3xl border border-neutral-800 bg-neutral-900/80">
-            <div className="relative w-full aspect-video">
-            <Image
-            src="/media/aditis-close-2.png"
-            alt="aditis"
-            fill
-            className="rounded-md brightness-95"
+            <Project
+              title="aditis technologies"
+              description="currently crafting a solution for construction companies to
+                  track the progress of their concrete pouring and testing.
+                  adits is becoming my first company."
+              image="/media/aditis.png"
             />
-            </div>
-            </div>
-          </div> */}
           </div>
+
           {/* Footer */}
-          <div className=" text-neutral-500 max-w-4xl w-full mt-32 flex flex-col gap-2 md:flex-row items-center md:justify-between">
-            <p className="text-neutral-300">
-              <Balancer>made by cauã adomaitis - 2023</Balancer>
-            </p>
-            <p className="text-center md:text-right">
-              <Balancer>
-                <Link
-                  href="https://nextjs.org/"
-                  target="_blank"
-                  className="hover:text-neutral-300 hover:underline duration-200"
-                >
-                  nextjs
-                </Link>
-                {" - "}
-                <Link
-                  href="https://tailwindcss.com/"
-                  target="_blank"
-                  className="hover:text-neutral-300 hover:underline duration-200"
-                >
-                  tailwindcss
-                </Link>
-                {" - "}
-                <Link
-                  href="https://vercel.com"
-                  target="_blank"
-                  className="hover:text-neutral-300 hover:underline duration-200"
-                >
-                  vercel
-                </Link>
-                {" - "}
-                <Link
-                  href="https://react-wrap-balancer.vercel.app/"
-                  target="_blank"
-                  className="hover:text-neutral-300 hover:underline duration-200"
-                >
-                  react balancer
-                </Link>
-                {" - "}
-                <Link
-                  href="https://lucide.dev"
-                  target="_blank"
-                  className="hover:text-neutral-300 hover:underline duration-200"
-                >
-                  lucide icons
-                </Link>
-              </Balancer>
-            </p>
-          </div>
+          <Footer />
         </div>
       </main>
     </>
