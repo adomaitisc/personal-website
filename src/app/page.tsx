@@ -3,16 +3,28 @@ import Image from "next/image";
 import Link from "next/link";
 import { Balancer } from "react-wrap-balancer";
 import { TextReveal } from "./text-reveal";
+import { Contributions } from "./contributions";
 
-export default function Home() {
+async function getContributions() {
+  let thisYear = new Date().getFullYear();
+
+  let res = await fetch(
+    `https://github-contributions-n55umvkfm-adomaitisc.vercel.app/adomaitisc/${thisYear}`
+  );
+
+  let data = await res.json();
+
+  return data;
+}
+
+export default async function Home() {
+  const ghub = await getContributions();
+
+  console.log(ghub);
+
   return (
-    <main
-      className="
-    p-4 md:p-24
-    bg-black/50 select-none flex flex-col items-center relative"
-    >
-      {/* Fixed Header */}
-      <div className="fixed w-full px-4 z-10 md:px-24">
+    <>
+      <div className="fixed w-full px-4 z-10 md:px-24 top-16">
         <div className="max-w-4xl mx-auto w-full flex justify-between">
           <div className="flex gap-2 hover:border-neutral-700 text-neutral-500 hover:text-neutral-300 duration-300 bg-black/20 backdrop-blur-xl border border-neutral-800 rounded-[27px] overflow-hidden p-1">
             <div className="aspect-square h-[44px] rounded-full overflow-hidden relative">
@@ -77,282 +89,299 @@ export default function Home() {
           </div>
         </div>
       </div>
-      {/* Content */}
-      <div
+      <main
+        id="scroll"
         className="
-        pt-48 max-w-4xl flex-col relative flex gap-4 justify-center items-center"
+      p-4 md:p-24
+      bg-black/50 select-none flex flex-col items-center h-screen w-full relative overflow-hidden"
       >
-        {/* Text */}
-        <div className="flex-1 space-y-8 text-neutral-200">
-          <h1 className="text-2xl tracking-wide">
-            <Balancer>
-              <span className="text-neutral-500">cauã adomaitis</span>,
-              fullstack developer from brazil, based in boston. moved by
-              creativity and innovation, from product design to complex coding
-              and organized system design. crafting a great product is my main
-              goal.
-            </Balancer>
-          </h1>
+        {/* Content */}
+        <div
+          className="
+        pt-48 max-w-4xl mx-auto flex-col relative flex gap-4 justify-center items-center"
+        >
+          {/* Text */}
+          <div className="flex-1 space-y-8 text-neutral-200">
+            <h1 className="text-2xl tracking-wide">
+              <Balancer>
+                <span className="text-neutral-500">cauã adomaitis</span>,
+                fullstack developer from brazil, based in boston. moved by
+                creativity and innovation, from product design to complex coding
+                and organized system design. crafting a great product is my main
+                goal.
+              </Balancer>
+            </h1>
 
-          <h1 className="text-2xl tracking-wide">
+            <h1 className="text-2xl tracking-wide">
+              <Balancer>
+                creating for{" "}
+                <Link
+                  href="https://qualidadeinteligente.com.br/"
+                  target="_blank"
+                  className="text-neutral-500 hover:text-neutral-300 hover:underline duration-200"
+                >
+                  qualidade inteligente
+                </Link>
+                , for friends, and for fun.
+              </Balancer>
+            </h1>
+            <h1 className="text-2xl tracking-wide">
+              <Balancer>
+                studying computer science at{" "}
+                <Link
+                  href="https://wit.edu/"
+                  target="_blank"
+                  className="text-neutral-500 hover:text-neutral-300 hover:underline duration-200"
+                >
+                  wentworth institute of technology
+                </Link>
+                .
+              </Balancer>
+            </h1>
+            <h1 className="text-2xl tracking-wide">
+              <Balancer>
+                co-founder of{" "}
+                <Link
+                  href="https://www.aditis.com.br"
+                  className="text-neutral-500 hover:text-neutral-300 hover:underline duration-200"
+                >
+                  aditis
+                </Link>
+                , my first saas.
+              </Balancer>
+            </h1>
+            {/* <h1 className="text-2xl tracking-wide">
             <Balancer>
-              creating for{" "}
-              <Link
-                href="https://qualidadeinteligente.com.br/"
-                target="_blank"
-                className="text-neutral-500 hover:text-neutral-300 hover:underline duration-200"
-              >
-                qualidade inteligente
-              </Link>
-              , for friends, and for fun.
-            </Balancer>
-          </h1>
-          <h1 className="text-2xl tracking-wide">
-            <Balancer>
-              studying computer science at{" "}
-              <Link
-                href="https://wit.edu/"
-                target="_blank"
-                className="text-neutral-500 hover:text-neutral-300 hover:underline duration-200"
-              >
-                wentworth institute of technology
-              </Link>
-              .
-            </Balancer>
-          </h1>
-          <h1 className="text-2xl tracking-wide">
-            <Balancer>
-              co-founder of{" "}
-              <Link
-                href="https://www.aditis.com.br"
-                className="text-neutral-500 hover:text-neutral-300 hover:underline duration-200"
-              >
-                aditis
-              </Link>
-              , my first saas.
-            </Balancer>
-          </h1>
-          {/* <h1 className="text-2xl tracking-wide">
-            <Balancer>
-              get in touch via{" "}
-              <Link
-                href="mailto:hello@adomaitisc.com"
-                className="text-neutral-500 hover:text-neutral-300 hover:underline duration-200"
-              >
-                email
-              </Link>{" "}
-              to create something cool.
+            get in touch via{" "}
+            <Link
+            href="mailto:hello@adomaitisc.com"
+            className="text-neutral-500 hover:text-neutral-300 hover:underline duration-200"
+            >
+            email
+            </Link>{" "}
+            to create something cool.
             </Balancer>
           </h1> */}
-        </div>
-        {/* Projects */}
-        <div className="w-full flex flex-col gap-20 mt-20">
-          <div className="space-y-4">
-            <h2 className="text-2xl tracking-wide">
-              <Link
-                href="https://simple-bookmarks-six.vercel.app"
-                target="_blank"
-                className="text-neutral-500 flex gap-3 items-center hover:text-neutral-300 hover:underline duration-200"
-              >
-                simple bookmarks
-                <ExternalLink size={22} />
-              </Link>
-            </h2>
-            <h3 className="text-2xl tracking-wide">
-              <Balancer>
-                bookmarking web app, open to public, auth with github oauth.
-                made it over a weekend after weeks waiting for a response from
-                rauno, the original creator.
-              </Balancer>
-            </h3>
-            <div
-              className="aspect-video border border-neutral-800 rounded-3xl overflow-hidden py-10"
-              style={{
-                backgroundColor: "#58785d",
-                backgroundImage:
-                  "repeating-radial-gradient( circle at 0 0, transparent 0, #58785d 30px ), repeating-linear-gradient( #010101, #58785d )",
-                backgroundBlendMode: "multiply",
-                backgroundSize: "100%",
-              }}
-            >
-              <div className="relative aspect-video w-4/5 mx-auto my-auto">
-                <Image src="/media/simple-bookmarks.png" alt="bookmarks" fill />
+          </div>
+          {/* Projects */}
+          <div className="w-full flex flex-col gap-20 mt-20">
+            <div className="w-full flex flex-col gap-20 mt-20">
+              <div className="space-y-4">
+                <h2 className="text-2xl tracking-wide">
+                  <Link
+                    href="https://github-contributions-api-pied.vercel.app/"
+                    target="_blank"
+                    className="text-neutral-500 inline-block hover:text-neutral-300 hover:underline duration-200"
+                  >
+                    <span className="flex gap-3 items-center justify-center">
+                      github contributions api
+                      <ExternalLink size={22} />
+                    </span>
+                  </Link>
+                </h2>
+                <h3 className="text-2xl tracking-wide">
+                  <Balancer>
+                    simple api made with next.js hosted on vercel that scrapes
+                    the desired user&apos;s github contributions calendar and
+                    returns a json object with data for the graph.
+                  </Balancer>
+                </h3>
+                <div className="md:block hidden">
+                  <div className="pt-8" />
+                  <Contributions data={ghub} />
+                  <div className="pt-8" />
+                </div>
+                <div className="md:hidden block">
+                  <h3 className="text-2xl tracking-wide text-neutral-500">
+                    <Balancer>
+                      sorry, the github contribution graph is not available at
+                      you screen size.
+                    </Balancer>
+                  </h3>
+                </div>
               </div>
             </div>
-          </div>
-          <div className="w-full flex flex-col gap-20 mt-20">
             <div className="space-y-4">
               <h2 className="text-2xl tracking-wide">
                 <Link
-                  href="https://inspectgpt.com"
+                  href="https://simple-bookmarks-six.vercel.app"
                   target="_blank"
-                  className="text-neutral-500 flex gap-3 items-center hover:text-neutral-300 hover:underline duration-200"
+                  className="text-neutral-500 inline-block hover:text-neutral-300 hover:underline duration-200"
                 >
-                  inspect gpt
-                  <ExternalLink size={22} />
+                  <span className="flex gap-3 items-center justify-center">
+                    simple bookmarks
+                    <ExternalLink size={22} />
+                  </span>
                 </Link>
               </h2>
               <h3 className="text-2xl tracking-wide">
                 <Balancer>
-                  chrome extension developed at the gpt boom, designed to
-                  identify ai-generated content on almost every webpage. someone
-                  even copied it from my github.
+                  bookmarking web app, open to public, auth with github oauth.
+                  made it over a weekend after weeks waiting for a response from
+                  rauno, the original creator.
                 </Balancer>
               </h3>
-              <div
-                className="aspect-video border border-neutral-800 rounded-3xl overflow-hidden py-10"
-                style={{
-                  backgroundColor: "#58785d",
-                  backgroundImage:
-                    "repeating-radial-gradient( circle at 0 0, transparent 0, #58785d 30px ), repeating-linear-gradient( #010101, #58785d )",
-                  backgroundBlendMode: "multiply",
-                  backgroundSize: "100%",
-                }}
-              >
-                <div className="relative aspect-video w-4/5 mx-auto my-auto">
-                  <Image src="/media/inspect.png" alt="bookmarks" fill />
+              <div className="aspect-video rounded-3xl overflow-hidden py-10">
+                <div className="relative aspect-video w-full mx-auto my-auto">
+                  <Image
+                    src="/media/simple-bookmarks.png"
+                    alt="bookmarks"
+                    fill
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="w-full flex flex-col gap-20 mt-20">
+              <div className="space-y-4">
+                <h2 className="text-2xl tracking-wide">
+                  <Link
+                    href="https://inspectgpt.com"
+                    target="_blank"
+                    className="text-neutral-500 inline-block hover:text-neutral-300 hover:underline duration-200"
+                  >
+                    <span className="flex gap-3 items-center justify-center">
+                      inspect gpt
+                      <ExternalLink size={22} />
+                    </span>
+                  </Link>
+                </h2>
+                <h3 className="text-2xl tracking-wide">
+                  <Balancer>
+                    chrome extension developed at the gpt boom, designed to
+                    identify ai-generated content on almost every webpage.
+                    someone even copied it from my github.
+                  </Balancer>
+                </h3>
+                <div className="aspect-video rounded-3xl overflow-hidden py-10">
+                  <div className="relative aspect-video w-full mx-auto my-auto">
+                    <Image src="/media/inspect.png" alt="bookmarks" fill />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="space-y-4">
+              <h2 className="text-2xl tracking-wide">
+                <Link
+                  href="https://solucao-simac.vercel.app"
+                  target="_blank"
+                  className="text-neutral-500 inline-block hover:text-neutral-300 hover:underline duration-200"
+                >
+                  <span className="flex gap-3 items-center justify-center">
+                    simac solution
+                    <ExternalLink size={22} />
+                  </span>
+                </Link>
+              </h2>
+              <h3 className="text-2xl tracking-wide">
+                <Balancer>
+                  the website from brazil{"'"}s government is broken. the ssl
+                  certificate is invalid, and the server is (very) unstable. my
+                  solution is reliable and fast.
+                </Balancer>
+              </h3>
+              <div className="aspect-video rounded-3xl overflow-hidden py-10">
+                <div className="relative aspect-video w-full mx-auto my-auto">
+                  <Image src="/media/simac-solution.png" alt="simac" fill />
                 </div>
               </div>
             </div>
           </div>
-          <div className="space-y-4">
-            <h2 className="text-2xl tracking-wide">
-              <Link
-                href="https://solucao-simac.vercel.app"
-                target="_blank"
-                className="text-neutral-500 flex gap-3 items-center hover:text-neutral-300 hover:underline duration-200"
-              >
-                simac solution
-                <ExternalLink size={22} />
-              </Link>
+          {/* Images */}
+          <div className="w-full mt-20 space-y-4">
+            <h2 className="text-2xl text-neutral-500 tracking-wide">
+              aditis technologies
             </h2>
             <h3 className="text-2xl tracking-wide">
               <Balancer>
-                the website from brazil{"'"}s government is broken. the ssl
-                certificate is invalid, and the server is (very) unstable. my
-                solution is reliable and fast.
+                currently crafting a solution for construction companies to
+                track the progress of their concrete pouring and testing. adits
+                is becoming my first company.
               </Balancer>
             </h3>
-            <div
-              className="aspect-video border border-neutral-800 rounded-3xl overflow-hidden py-10"
-              style={{
-                backgroundColor: "#58785d",
-                backgroundImage:
-                  "repeating-radial-gradient( circle at 0 0, transparent 0, #58785d 30px ), repeating-linear-gradient( #010101, #58785d )",
-                backgroundBlendMode: "multiply",
-                backgroundSize: "100%",
-              }}
-            >
-              <div className="relative aspect-video w-4/5 mx-auto my-auto">
-                <Image src="/media/simac-solution.png" alt="simac" fill />
-              </div>
-            </div>
-          </div>
-        </div>
-        {/* Images */}
-        <div className="w-full mt-20 space-y-4">
-          <h2 className="text-2xl text-neutral-500 tracking-wide">
-            aditis technologies
-          </h2>
-          <h3 className="text-2xl tracking-wide">
-            <Balancer>
-              currently crafting a solution for construction companies to track
-              the progress of their concrete pouring and testing. adits is
-              becoming my first company.
-            </Balancer>
-          </h3>
-          <div
-            className="aspect-video w-full flex justify-center items-center rounded-3xl border border-neutral-800"
-            style={{
-              backgroundColor: "#58785d",
-              backgroundImage:
-                "repeating-radial-gradient( circle at 0 0, transparent 0, #58785d 30px ), repeating-linear-gradient( #010101, #58785d )",
-              backgroundBlendMode: "multiply",
-              backgroundSize: "100%",
-            }}
-          >
-            <div className="relative w-4/5 aspect-video">
-              <Image
-                src="/media/aditis.png"
-                alt="aditis"
-                fill
-                className="brightness-95"
-              />
-            </div>
-          </div>
-          {/* <div className="flex gap-4 flex-col md:flex-row">
-            <div className="aspect-video w-full flex justify-center items-center rounded-3xl border border-neutral-800 bg-neutral-900/20">
-              <div className="relative w-4/5 aspect-video">
+            <div className="aspect-video w-full flex justify-center items-center rounded-3xl">
+              <div className="relative w-full aspect-video">
                 <Image
-                  src="/media/aditis-close-1.png"
+                  src="/media/aditis.png"
                   alt="aditis"
                   fill
-                  className="rounded-md brightness-95"
+                  className="brightness-95"
                 />
               </div>
+            </div>
+            {/* <div className="flex gap-4 flex-col md:flex-row">
+            <div className="aspect-video w-full flex justify-center items-center rounded-3xl border border-neutral-800 bg-neutral-900/20">
+            <div className="relative w-full aspect-video">
+            <Image
+            src="/media/aditis-close-1.png"
+            alt="aditis"
+            fill
+            className="rounded-md brightness-95"
+            />
+            </div>
             </div>
             <div className="aspect-video w-full flex justify-center items-center rounded-3xl border border-neutral-800 bg-neutral-900/80">
-              <div className="relative w-4/5 aspect-video">
-                <Image
-                  src="/media/aditis-close-2.png"
-                  alt="aditis"
-                  fill
-                  className="rounded-md brightness-95"
-                />
-              </div>
+            <div className="relative w-full aspect-video">
+            <Image
+            src="/media/aditis-close-2.png"
+            alt="aditis"
+            fill
+            className="rounded-md brightness-95"
+            />
+            </div>
             </div>
           </div> */}
+          </div>
+          {/* Footer */}
+          <div className=" text-neutral-500 max-w-4xl w-full mt-32 flex flex-col gap-2 md:flex-row items-center md:justify-between">
+            <p className="text-neutral-300">
+              <Balancer>made by cauã adomaitis - 2023</Balancer>
+            </p>
+            <p className="text-center md:text-right">
+              <Balancer>
+                <Link
+                  href="https://nextjs.org/"
+                  target="_blank"
+                  className="hover:text-neutral-300 hover:underline duration-200"
+                >
+                  nextjs
+                </Link>
+                {" - "}
+                <Link
+                  href="https://tailwindcss.com/"
+                  target="_blank"
+                  className="hover:text-neutral-300 hover:underline duration-200"
+                >
+                  tailwindcss
+                </Link>
+                {" - "}
+                <Link
+                  href="https://vercel.com"
+                  target="_blank"
+                  className="hover:text-neutral-300 hover:underline duration-200"
+                >
+                  vercel
+                </Link>
+                {" - "}
+                <Link
+                  href="https://react-wrap-balancer.vercel.app/"
+                  target="_blank"
+                  className="hover:text-neutral-300 hover:underline duration-200"
+                >
+                  react balancer
+                </Link>
+                {" - "}
+                <Link
+                  href="https://lucide.dev"
+                  target="_blank"
+                  className="hover:text-neutral-300 hover:underline duration-200"
+                >
+                  lucide icons
+                </Link>
+              </Balancer>
+            </p>
+          </div>
         </div>
-        {/* Footer */}
-        <div className=" text-neutral-500 max-w-4xl w-full mt-32 flex flex-col gap-2 md:flex-row items-center md:justify-between">
-          <p className="text-neutral-300">
-            <Balancer>made by cauã adomaitis - 2023</Balancer>
-          </p>
-          <p className="text-center md:text-right">
-            <Balancer>
-              <Link
-                href="https://nextjs.org/"
-                target="_blank"
-                className="hover:text-neutral-300 hover:underline duration-200"
-              >
-                nextjs
-              </Link>
-              {" - "}
-              <Link
-                href="https://tailwindcss.com/"
-                target="_blank"
-                className="hover:text-neutral-300 hover:underline duration-200"
-              >
-                tailwindcss
-              </Link>
-              {" - "}
-              <Link
-                href="https://vercel.com"
-                target="_blank"
-                className="hover:text-neutral-300 hover:underline duration-200"
-              >
-                vercel
-              </Link>
-              {" - "}
-              <Link
-                href="https://react-wrap-balancer.vercel.app/"
-                target="_blank"
-                className="hover:text-neutral-300 hover:underline duration-200"
-              >
-                react balancer
-              </Link>
-              {" - "}
-              <Link
-                href="https://lucide.dev"
-                target="_blank"
-                className="hover:text-neutral-300 hover:underline duration-200"
-              >
-                lucide icons
-              </Link>
-            </Balancer>
-          </p>
-        </div>
-      </div>
-    </main>
+      </main>
+    </>
   );
 }

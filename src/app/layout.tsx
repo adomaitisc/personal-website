@@ -2,6 +2,11 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/react";
 import { Questrial } from "next/font/google";
+import { ScrollThing } from "./scroll-thing";
+import Link from "next/link";
+import { Github, Linkedin, Mail } from "lucide-react";
+import { TextReveal } from "./text-reveal";
+import Image from "next/image";
 
 const questrial = Questrial({ weight: "400", subsets: ["latin"] });
 
@@ -85,6 +90,7 @@ export default function RootLayout({
       <body className={questrial.className}>
         {children}
         <Analytics />
+        <ScrollThing />
       </body>
     </html>
   );
