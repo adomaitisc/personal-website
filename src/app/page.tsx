@@ -36,7 +36,7 @@ export default async function Home() {
         pt-48 max-w-4xl mx-auto flex-col relative flex gap-4 justify-center items-center"
         >
           <div className="flex-1 space-y-8 text-neutral-200">
-            <h1 className="text-6xl md:text-7xl opacity-5">cauã adomaitis</h1>
+            <h1 className="text-6xl md:text-7xl opacity-10">cauã adomaitis</h1>
 
             <h1 className="text-2xl tracking-wide">
               <Balancer>
@@ -88,7 +88,7 @@ export default async function Home() {
           </div>
 
           {/* New Projects */}
-          <h1 className="text-6xl md:text-7xl pt-32 opacity-5 w-full">
+          <h1 className="text-6xl md:text-7xl pt-32 opacity-10 w-full">
             a few projects
           </h1>
           <div className="max-w-4xl mx-auto w-full flex flex-col">

@@ -5,7 +5,7 @@ import { TextReveal } from "./text-reveal";
 
 export function Header() {
   return (
-    <header className="fixed w-full px-4 z-10 md:px-24 top-16">
+    <header className="fixed w-full px-4 z-10 md:px-24 top-16 select-none">
       <div className="max-w-4xl mx-auto w-full flex justify-between">
         <div className="flex gap-2 hover:border-neutral-700 text-neutral-500 hover:text-neutral-300 duration-300 bg-black/20 backdrop-blur-xl border border-neutral-800 rounded-[27px] overflow-hidden p-1">
           <div className="aspect-square h-[44px] rounded-full overflow-hidden relative">
