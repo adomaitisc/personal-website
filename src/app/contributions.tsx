@@ -15,9 +15,9 @@ const colors = ["#262626", "#0e4429", "#006d32", "#26a641", "#39d353"];
 
 export function Contributions({ data }: { data: Table }) {
   return (
-    <div className="w-full overflow-x-auto p-2 rounded-lg bg-neutral-900 border border-neutral-800 hover:border-neutral-700 duration-200">
+    <>
       {data && (
-        <table className="h-full m-0 w-full">
+        <table className="overflow-x-auto">
           {data.length === 0 ? (
             <p className="text-sm text-zinc-700">
               it was not possible to render the contribution table at the moment
@@ -46,6 +46,6 @@ export function Contributions({ data }: { data: Table }) {
           )}
         </table>
       )}
-    </div>
+    </>
   );
 }

@@ -14,7 +14,7 @@ interface ProjectProps {
 
 export function Project(props: ProjectProps) {
   return (
-    <div className="space-y-4 py-10">
+    <div className="space-y-4 py-10 w-full overflow-hidden">
       <h2 className="text-2xl tracking-wide">
         {props.link ? (
           <Link

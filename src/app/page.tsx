@@ -36,7 +36,7 @@ export default async function Home() {
         pt-48 max-w-4xl mx-auto flex-col relative flex gap-4 justify-center items-center"
         >
           <div className="flex-1 space-y-8 text-neutral-200">
-            <h1 className="text-7xl opacity-5">cauã adomaitis</h1>
+            <h1 className="text-6xl md:text-7xl opacity-5">cauã adomaitis</h1>
 
             <h1 className="text-2xl tracking-wide">
               <Balancer>
@@ -88,10 +88,10 @@ export default async function Home() {
           </div>
 
           {/* New Projects */}
-
-          {/* Projects */}
-          <div className="w-full flex flex-col pt-10">
-            <h1 className="text-7xl pt-20 opacity-5">a few projects</h1>
+          <h1 className="text-6xl md:text-7xl pt-32 opacity-5 w-full">
+            a few projects
+          </h1>
+          <div className="max-w-4xl mx-auto w-full flex flex-col">
             <Project
               title="github contributions api"
               link="https://github-contributions-api-pied.vercel.app/"
@@ -99,7 +99,11 @@ export default async function Home() {
                   desired user's github contributions calendar and returns
                   a json object with data for the graph."
             >
-              <Contributions data={ghub} />
+              <div className="w-full h-36 relative">
+                <div className="outline outline-4 outline-neutral-900 -outline-offset-[5px] absolute w-full overflow-x-auto p-2 rounded-lg bg-neutral-900 border border-neutral-800 hover:border-neutral-700 duration-200">
+                  <Contributions data={ghub} />
+                </div>
+              </div>
             </Project>
             <Project
               title="simple bookmarks"
@@ -133,7 +137,6 @@ export default async function Home() {
               image="/media/aditis.png"
             />
           </div>
-
           {/* Footer */}
           <Footer />
         </div>
