@@ -31,12 +31,10 @@ export default async function Home() {
 
       <main className="p-4 md:p-24 bg-black/50 select-none flex flex-col items-center w-full relative overflow-hidden">
         {/* Content */}
-        <div
-          className="
-        pt-48 max-w-4xl mx-auto flex-col relative flex gap-4 justify-center items-center"
-        >
-          <div className="flex-1 space-y-8 text-neutral-200">
-            <h1 className="text-6xl md:text-7xl opacity-10">cauã adomaitis</h1>
+        <div className="pt-48 max-w-4xl mx-auto flex-col relative flex gap-4">
+          {/* Home content */}
+          <div className="flex-1 space-y-8 text-neutral-200 w-full">
+            <h1 className="text-6xl md:text-7xl opacity-20">cauã adomaitis</h1>
 
             <h1 className="text-2xl tracking-wide">
               <Balancer>
@@ -87,8 +85,8 @@ export default async function Home() {
             </h1>
           </div>
 
-          {/* New Projects */}
-          <h1 className="text-6xl md:text-7xl pt-32 opacity-10 w-full">
+          {/* Projects */}
+          <h1 className="text-6xl md:text-7xl pt-32 opacity-20 w-full">
             a few projects
           </h1>
           <div className="max-w-4xl mx-auto w-full flex flex-col">
