@@ -1,24 +1,34 @@
+"use client";
+
 import { Github, Linkedin, Mail } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { TextReveal } from "./text-reveal";
+import { useState } from "react";
 
 export function Header() {
+  const [render, setRender] = useState<number>(0);
+
   return (
     <header className="fixed w-full px-4 z-10 md:px-24 top-16 select-none">
       <div className="max-w-4xl mx-auto w-full flex justify-between">
-        <div className="flex gap-2 hover:border-neutral-700 text-neutral-500 hover:text-neutral-300 duration-300 bg-black/20 backdrop-blur-xl border border-neutral-800 rounded-[27px] overflow-hidden p-1">
-          <div className="aspect-square h-[44px] rounded-full overflow-hidden relative">
-            <Image
-              alt="wow"
-              fill
-              src="/media/logo.svg"
-              className="animate-spin"
-            />
+        <div
+          onMouseEnter={() => setRender(render + 1)}
+          className="max-w-[172px] w-full overflow-visible"
+        >
+          <div className="w-auto flex flex-nowrap gap-2 hover:border-neutral-700 text-neutral-500 hover:text-neutral-300 duration-300 bg-black/20 backdrop-blur-xl border border-neutral-800 rounded-[27px] overflow-hidden p-1">
+            <div className="shrink-0 aspect-square h-[44px] rounded-full overflow-hidden relative pr-4">
+              <Image
+                alt="wow"
+                fill
+                src="/media/logo.svg"
+                className="animate-spin shrink-0"
+              />
+            </div>
+            <h1 className="my-auto whitespace-nowrap text-lg md:text-xl font-bold">
+              {render >= 0 && <TextReveal key={render}>hello there</TextReveal>}
+            </h1>
           </div>
-          <h1 className="pr-4 my-auto text-lg md:text-xl font-bold">
-            <TextReveal>hello there</TextReveal>
-          </h1>
         </div>
         {/* <p className="md:hidden block text-white">sm</p> */}
         <div className="flex gap-2 hover:border-neutral-700 text-neutral-500 duration-300 bg-black/20 backdrop-blur-xl border border-neutral-800 rounded-[27px] overflow-hidden p-1">
