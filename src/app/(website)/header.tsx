@@ -16,7 +16,7 @@ export function Header() {
   const [render, setRender] = useState<number>(0);
 
   return (
-    <header className="fixed w-full px-4 z-10 md:px-24 top-16 select-none">
+    <header className="fixed w-full px-4 z-20 md:px-24 top-16 select-none">
       <div className="max-w-4xl mx-auto w-full flex justify-between">
         <div
           onMouseEnter={() => setRender(render + 1)}
@@ -39,7 +39,7 @@ export function Header() {
         <TooltipProvider>
           <div className="flex gap-2 hover:border-neutral-700 text-neutral-500 duration-300 bg-black/20 backdrop-blur-xl border border-neutral-800 rounded-[27px] p-1">
             <Tooltip>
-              <TooltipTrigger>
+              <TooltipTrigger asChild>
                 <Link
                   href="/github"
                   target="_blank"
@@ -53,7 +53,7 @@ export function Header() {
               </TooltipContent>
             </Tooltip>
             <Tooltip>
-              <TooltipTrigger>
+              <TooltipTrigger asChild>
                 <Link
                   href="/linkedin"
                   target="_blank"
@@ -67,9 +67,9 @@ export function Header() {
               </TooltipContent>
             </Tooltip>
             <Tooltip>
-              <TooltipTrigger>
+              <TooltipTrigger asChild>
                 <Link
-                  href="/personal_resume.pdf"
+                  href="/caua-adomaitis-cv.pdf"
                   download
                   target="_blank"
                   className="group aspect-square h-[44px] rounded-full overflow-hidden grid text-neutral-500 place-items-center hover:text-neutral-300 hover:bg-neutral-800 duration-200 cursor-pointer"
@@ -100,9 +100,10 @@ export function Header() {
               </TooltipContent>
             </Tooltip>
             <Tooltip>
-              <TooltipTrigger>
+              <TooltipTrigger asChild>
                 <Link
                   href="mailto:caua@adomaitisc.com"
+                  target="_blank"
                   className="aspect-square h-[44px] rounded-full overflow-hidden grid place-items-center text-neutral-600 hover:text-neutral-900 hover:bg-white bg-neutral-200 duration-200 cursor-pointer"
                 >
                   <Mail size={18} />

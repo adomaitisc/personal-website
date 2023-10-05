@@ -29,7 +29,7 @@ export default async function Home() {
       {/* Header */}
       <Header />
 
-      <main className="p-4 md:p-24 bg-black/50 select-none flex flex-col items-center w-full relative overflow-hidden">
+      <main className="p-4 md:p-24 bg-black/50 select-none flex flex-col items-center w-full relative overflow-hidden z-10">
         {/* Content */}
         <div className="pt-48 max-w-4xl mx-auto flex-col relative flex gap-4">
           {/* Home content */}
