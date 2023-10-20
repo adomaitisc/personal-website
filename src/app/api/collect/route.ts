@@ -52,5 +52,7 @@ export async function GET() {
     ]);
   }
 
-  return new Response(JSON.stringify({ success: true }), { status: 204 });
+  return new Response(null, {
+    status: 204,
+  });
 }
