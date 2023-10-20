@@ -2,6 +2,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/react";
 import { Questrial } from "next/font/google";
+import { headers } from "next/headers";
 
 const questrial = Questrial({ weight: "400", subsets: ["latin"] });
 
@@ -80,9 +81,12 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const headersList = headers();
+  const forwarded = headersList.get("x-forwarded-for");
+
   return (
     <html lang="en">
-      <body className={questrial.className}>
+      <body className={questrial.className} data-x-forwarded-for={forwarded}>
         {children}
         <svg
           className="w-screen h-screen fixed top-0 left-0 pointer-events-none z-0"
